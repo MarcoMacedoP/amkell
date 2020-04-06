@@ -1,22 +1,20 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import {Layout} from "./components/Layout";
+import { Layout } from "./components/Layout";
+import { HomePage } from "./pages/Home";
 
 function App() {
   return (
-    <Layout>
-        <p className="text-xl text-red-400 hover:-rotate-90">
-            Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Learn React
-        </a>
-    </Layout>
+    <Router>
+      <Layout>
+        <Switch>
+          <Route to="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Layout>
+    </Router>
   );
 }
 
