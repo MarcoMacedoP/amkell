@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-icons {
+    border-radius: 16px;
+    cursor: pointer;
+    opacity: 0.75;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    transition: opacity 800ms ease-in, background-color 800ms ease, color;
+}
+.material-icons:hover,
+.material-icons:focus,
+.material-icons:active {
+    @apply bg-blue-700;
+    @apply text-white;
+    opacity: 75;
+}
+
+.Layout__menu{
+    @apply bg-gray-200 absolute  rounded-lg shadow-xl overflow-hidden;
+    top: 1rem;
+    right: 1rem;
+    transition-timing-function: ease-in;
+    transition-duration: 100ms;
+    transition-property: width, height, padding;
+}
+.Layout__menu li{
+    @apply transition-colors duration-200 ease-in p-2 rounded-lg cursor-pointer;
+}
+.Layout__menu .close-icon{
+    right: 0.5rem;
+    top: 0.5rem;
+}
+.Layout__menu li:hover,
+.Layout__menu li:active,
+.Layout__menu li:focus {
+    @apply bg-gray-300;
+}
