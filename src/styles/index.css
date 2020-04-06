@@ -3,20 +3,21 @@
 @tailwind utilities;
 
 .material-icons {
-    border-radius: 16px;
+    border-radius: 50%;
     cursor: pointer;
     opacity: 0.75;
     padding: 4px;
     display: flex;
     justify-content: center;
+    z-index: 0;
     transition: opacity 800ms ease-in, background-color 800ms ease, color;
 }
 .material-icons:hover,
 .material-icons:focus,
 .material-icons:active {
-    @apply bg-blue-700;
     @apply text-white;
     opacity: 75;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .Layout__menu{
@@ -38,4 +39,7 @@
 .Layout__menu li:active,
 .Layout__menu li:focus {
     @apply bg-gray-300;
+}
+.line{
+    @apply bg-primary w-16 h-1;
 }
