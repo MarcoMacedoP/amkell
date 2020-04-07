@@ -22,8 +22,8 @@ export const Layout: LayoutType = (props) => {
     setHasClickedOnMenu(!hasClickedOnMenu);
   }
   return (
-    <article className="w-screen  box-content w-full overflow-x-hidden ">
-      <nav className="py-2 px-6 fixed top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md">
+    <article className="w-full h-screen box-content w-full overflow-x-hidden">
+      <nav className="py-2 px-6 box-border fixed top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md z-20">
         <img
           className="object-contain h-12"
           src={logo}
@@ -50,7 +50,7 @@ export const Layout: LayoutType = (props) => {
           <li>Contacto</li>
         </ul>
       </nav>
-      <section className="min-h-screen w-full mt-16 px-5">
+      <section className="w-full mt-16 px-5 box-border overflow-hidden">
         {props.children}
       </section>
       <footer className="w-full h-48  justify-between ">
