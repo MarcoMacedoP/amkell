@@ -6,9 +6,9 @@ type HomeSliderType = React.FC<Props>;
 
 export const HomeSlider: HomeSliderType = (props) => {
   return (
-    <nav className="h-middle w-screen -ml-5">
+    <nav className="w-screen -ml-5 mb-8">
       <div className="h-40 bg-black h-2/3 p-2">
-        <div className="flex flex-col w-full justify-center items-center h-full">
+        <div className="flex flex-col w-full justify-center items-center h-48">
           <div className="line mb-2" />
           <h1 className="text-xl text-white uppercase text-center">
             Calidad e innovacion arquitectonica en la edificación
@@ -24,7 +24,7 @@ export const HomeSlider: HomeSliderType = (props) => {
           </div>
         </div>
       </div>
-      <div className="h-1/3 w-full flex flex-wrap">
+      <div className="w-full flex flex-wrap">
         <SectionLink
           to={"/proyectos"}
           isActive={true}
@@ -69,10 +69,10 @@ type SectionLinkProps = {
 const SectionLink = ({ to, isActive, index, title }: SectionLinkProps) => (
   <Link
     to={to}
-    className={`w-2/6 h-full flex flex-col text-sm justify-center px-2 transition-colors duration-300 ease-in ${
+    className={`w-2/6 h-24 flex flex-col text-sm justify-center px-2 transition-colors duration-300 ease-in ${
       isActive
         ? "bg-primary text-white hover:bg-red-700"
-        : "bg-white text-black hover:bg-gray-300"
+        : "bg-gray-100 text-black hover:bg-gray-300"
     }`}
   >
     <span>0{index}</span>
