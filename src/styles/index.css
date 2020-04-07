@@ -43,3 +43,13 @@
 .line{
     @apply bg-primary w-16 h-1;
 }
+.icon {
+    @apply w-4 h-4 m-1;
+
+}
+.icon.small {
+    @apply w-2 h-2;
+}
+.filter-brightness{
+    filter:brightness(0.5)
+}

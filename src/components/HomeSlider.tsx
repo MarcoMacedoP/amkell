@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import banner from "../assets/img/banner.jpg";
 type Props = {};
 type HomeSliderType = React.FC<Props>;
 
 export const HomeSlider: HomeSliderType = (props) => {
   return (
     <nav className="w-screen -ml-5 mb-8">
-      <div className="h-40 bg-black h-2/3 p-2">
-        <div className="flex flex-col w-full justify-center items-center h-48">
+      <div className="h-40 bg-black h-2/3 p-2  relative">
+        <div
+          className="h-full w-full bg-cover bg-center absolute top-0 bottom-0 left-0 right-0 z-0 filter-brightness"
+          style={{ backgroundImage: `url(${banner})` }}
+        />
+        <div className="flex flex-col w-full justify-center items-center h-48 relative z-20">
           <div className="line mb-2" />
           <h1 className="text-xl text-white uppercase text-center">
             Calidad e innovacion arquitectonica en la edificación
