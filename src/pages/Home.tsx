@@ -1,18 +1,21 @@
 import React from "react";
 import { HomeSlider } from "../components/HomeSlider";
 import { Button } from "../components/Button";
+import { ImageWithBox } from "../components/ImageWithBox";
 import nosotrosImage from "../assets/img/nosotros.jpeg";
 import fachadaImage from "../assets/img/fachada-ventilada.jpg";
 import productsImage from "../assets/img/productos-arquitectonicos.png";
 import solutionsImage from "../assets/img/soluciones-interiores.png";
 import buildingImage from "../assets/img/structure.png";
-
+//icons
 import planificacionIcon from "../assets/icons/planificacion.svg";
 import interiorsIcon from "../assets/icons/Interiores.svg";
 import exterioresIcon from "../assets/icons/exteriores.svg";
 import buildIcon from "../assets/icons/build-icon.svg";
+//Materiales
 
-import { ImageWithBox } from "../components/ImageWithBox";
+import alucobondIamge from "../assets/img/Alucobond.png";
+import celciasImage from "../assets/img/Celocias.png";
 
 type Props = {};
 type HomeType = React.FC<Props>;
@@ -88,6 +91,20 @@ export const HomePage: HomeType = (props) => {
             desc="Nuestros planes maestros proporcionan una vision integral de donde está una organización hoy en día"
           />
         </div>
+        <section className="flex flex-col items-center">
+          <div className="w-full mb-4">
+            <div className="line mb-2" />
+            <h2 className="text-primary text-xl">Materiales</h2>
+          </div>
+          <div className="flex flex-wrap w-full items-center justify-center">
+            <MaterialCard name="Alucobond" image={alucobondIamge} />
+            <MaterialCard name="Celcias" image={celciasImage} />
+            <MaterialCard name="Alucobond" image={alucobondIamge} />
+            <MaterialCard name="Celcias" image={celciasImage} />
+            <MaterialCard name="Alucobond" image={alucobondIamge} />
+            <MaterialCard name="Celcias" image={celciasImage} />
+          </div>
+        </section>
       </section>
     </>
   );
@@ -110,5 +127,30 @@ const AboutIcon = (props: AboutIconProps) => (
       <p className="font-bold">{props.title}</p>
       <p className="text-xs">{props.desc}</p>
     </div>
+  </div>
+);
+
+type MaterialCardProps = {
+  name: string;
+  buttonText?: string;
+  image: string;
+  className?: string;
+};
+
+const MaterialCard = (props: MaterialCardProps) => (
+  <div
+    className={`flex flex-col w-3/8 justify-center my-4 mx-2 items-center ${props.className}`}
+  >
+    <img
+      className="h-32 w-32 bg-brown rounded-full mb-2"
+      src={props.image}
+      alt={props.name}
+    />
+    <p className="text-black text-sm mb-2">{props.name}</p>
+    <Button
+      color="secondary"
+      className="w-2/3"
+      text={props.buttonText || "Ver más"}
+    />
   </div>
 );
