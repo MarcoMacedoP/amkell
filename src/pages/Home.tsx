@@ -21,20 +21,24 @@ type Props = {};
 type HomeType = React.FC<Props>;
 
 export const HomePage: HomeType = (props) => {
-  console.log(props);
   return (
     <>
       <HomeSlider />
-      <section className="flex flex-wrap w-full flex-col-reverse mb-8">
+      <section
+        className="flex flex-wrap w-full flex-col-reverse mb-8
+                           md:flex-row md:flex-no-wrap lg:mb-32"
+      >
         <img
           src={nosotrosImage}
           alt=""
-          className="w-full object-cover object-center mt-4 rounded-lg"
+          className="w-full object-cover object-center mt-4 rounded-lg md:w-3/6"
         />
-        <div className="flex-col flex">
-          <div className="line mb-2" />
-          <h2 className="text-primary text-2xl">Nosotros</h2>
-          <p className="mt-2 text-black">
+        <div className="flex-col flex md:w-3/6 md:ml-4 lg:ml-6 md:self-center  md:justify-between">
+          <div>
+            <div className="line mb-2" />
+            <h2 className="text-primary text-2xl md:mb-6">Nosotros</h2>
+          </div>
+          <p className="mt-2 text-black md:mb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam semper
             tempus quam lobortis tempus. Curabitur a dictum eros, non volutpat
             neque. Ut imperdiet placerat felis, et scelerisque felis consectetur
@@ -43,18 +47,18 @@ export const HomePage: HomeType = (props) => {
             congue nec bibendum ut, pellentesque eget orci. Morbi quam justo,
             ullamcorper vitae metus sit amet, commodo molestie augue.
           </p>
-          <Button text="Ver más" className="mt-4" />
+          <Button text="Ver más" className="mt-4 w-2/3" />
         </div>
       </section>
 
       <section className="flex flex-col">
         <div className="w-full">
           <div className="line mb-2 uppercase" />
-          <h2 className="text-primary text-2xl mb-2">
+          <h2 className="text-primary text-2xl mb-2 md:mb-8">
             Soluciones arquitectónicas
           </h2>
         </div>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex flex-row flex-wrap md:flex-col md:mb-16">
           <ImageWithBox image={fachadaImage} title="Fachada Ventilada" />
           <ImageWithBox
             image={productsImage}
@@ -67,7 +71,10 @@ export const HomePage: HomeType = (props) => {
           />
         </div>
         <div
-          className="bg-brown w-screen h-middle -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center"
+          className="bg-brown w-screen h-middle -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center
+                      md:-ml-16 lg:-ml-24
+
+          "
           style={{ backgroundImage: `url(${buildingImage})` }}
         >
           <AboutIcon
@@ -92,11 +99,11 @@ export const HomePage: HomeType = (props) => {
           />
         </div>
         <section className="flex flex-col items-center">
-          <div className="w-full mb-4">
-            <div className="line mb-2" />
-            <h2 className="text-primary text-xl">Materiales</h2>
+          <div className="w-full mb-4 flex flex-col items-center lg:w-1/12">
+            <div className="line mb-2 lg:self-start" />
+            <h2 className="text-primary text-xl ">Materiales</h2>
           </div>
-          <div className="flex flex-wrap w-full items-center justify-center">
+          <div className="flex flex-wrap w-full items-center justify-center md:mt-8">
             <MaterialCard name="Alucobond" image={alucobondIamge} />
             <MaterialCard name="Celcias" image={celciasImage} />
             <MaterialCard name="Alucobond" image={alucobondIamge} />

@@ -15,15 +15,23 @@ export const ImageWithBox: ImageWithBoxType = ({
   className = "",
 }) => {
   return (
-    <div className={`relative w-full mb-2 ${className}`}>
+    <div
+      className={`relative w-full flex mb-2 ${
+        isPrimary ? "md:w-full justify-end" : "md:w-1/2"
+      } ${className}  `}
+    >
       <img
         src={image}
-        className="w-full h-5/6 object-cover object-center"
+        className={`w-full h-5/6 object-cover object-center md:h-full ${
+          isPrimary && "md:w-1/2"
+        }`}
         alt=""
       />
       <p
-        className={`p-3 whitespace-no-wrap text-center absolute w-2/3 right-0 bottom-0 text-sm ${
-          isPrimary ? "bg-primary text-white" : "bg-gray-200 text-black"
+        className={`p-3 whitespace-no-wrap text-center absolute w-2/3 right-0 bottom-0 text-sm md:p-4 md:text-lg ${
+          isPrimary
+            ? "bg-primary text-white md:w-1/3"
+            : "bg-gray-200 text-black"
         }`}
       >
         {title}

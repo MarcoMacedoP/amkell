@@ -21,7 +21,7 @@
 }
 
 .Layout__menu{
-    @apply bg-gray-200 absolute  rounded-lg shadow-xl overflow-hidden;
+    @apply bg-gray-200 absolute  rounded-lg shadow-xl overflow-hidden flex flex-col;
     top: 1rem;
     right: 1rem;
     transition-timing-function: ease-in;
@@ -40,6 +40,21 @@
 .Layout__menu li:focus {
     @apply bg-gray-300;
 }
+@media (min-width: 1024px){
+    .Layout__menu{
+        top: 0;
+        right: 0;
+        @apply shadow-none bg-transparent p-0 flex items-center h-full justify-end flex-row;
+    }
+    .Layout__menu li{
+        @apply text-black;
+    }
+    .Layout__menu li:hover,
+    .Layout__menu li:active,
+    .Layout__menu li:focus {
+        @apply text-primary bg-transparent;
+    }
+}
 .line{
     @apply bg-primary w-16 h-1;
 }
@@ -51,5 +66,5 @@
     @apply w-2 h-2;
 }
 .filter-brightness{
-    filter:brightness(0.5)
+    filter:brightness(0.9)
 }

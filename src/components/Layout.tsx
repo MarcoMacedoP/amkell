@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/img/logo.png";
 import logoWhite from "../assets/img/logo-white.png";
 import footerBackground from "../assets/img/footer.png";
 import facebookIcon from "../assets/icons/facebook-icon.svg";
 import instagramIcon from "../assets/icons/instagram-icon.svg";
 import buildIcon from "../assets/icons/build-icon.svg";
-
+import phoneIcon from "../assets/icons/phone-icon.svg";
+import whatsappIcon from "../assets/icons/whatsapp-icon.svg";
 type Props = {};
 type LayoutType = React.FC<Props>;
 
@@ -26,21 +27,30 @@ export const Layout: LayoutType = (props) => {
     console.log("click");
     setHasClickedOnMenu(!hasClickedOnMenu);
   }
+  useEffect(() => {
+    const width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    if (width > 1024) {
+      setHasClickedOnMenu(true);
+    }
+  }, []);
 
   return (
     <article className="w-full h-screen box-content w-full overflow-x-hidden">
-      <nav className="py-2 px-6 box-border fixed top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md z-20">
+      <nav className="py-2 px-6 box-border fixed top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md z-50">
         <Logo />
-        <button className="material-icons" onClick={handleClick}>
+        <button className="material-icons lg:hidden" onClick={handleClick}>
           menu
         </button>
         <ul
-          className={`Layout__menu ${
+          className={`Layout__menu lg:relative lg:flex-end ${
             hasClickedOnMenu ? "w-2/3 h-auto py-8 px-6" : "w-0 h-0 p-0"
           }`}
         >
           <span
-            className="close-icon material-icons absolute top-0 text-gray-400 md:hidden"
+            className="close-icon material-icons absolute top-0 text-gray-400 lg:hidden"
             onClick={handleClick}
           >
             close
@@ -50,17 +60,30 @@ export const Layout: LayoutType = (props) => {
           <li>Galería</li>
           <li>Proyectos</li>
           <li>Contacto</li>
+          <li className="items-center hidden lg:flex">
+            <div className="flex items-center">
+              <img src={whatsappIcon} alt="" className="icon" />
+              <img src={phoneIcon} alt="" className="icon" />
+              <p className="text-sm color-black">(33) 38012003</p>
+            </div>
+            <img src={facebookIcon} alt="" className="icon" />
+            <img src={buildIcon} alt="" className="icon" />
+            <img src={instagramIcon} alt="" className="icon" />
+          </li>
         </ul>
       </nav>
-      <section className="w-full mt-16 px-5 box-border overflow-hidden">
+      <section className="w-full mt-16 px-2 box-border overflow-hidden md:px-16 lg:px-24">
         {props.children}
       </section>
-      <footer className="w-full h-48 mt-16  justify-between ">
+      <footer className="w-full h-48 mt-16  justify-between">
         <div
-          className="p-5 bg-cover bg-center flex flex-col"
+          className="p-5 bg-cover bg-center flex flex-col md:items-center"
           style={{ backgroundImage: `url(${footerBackground})` }}
         >
           <div className="flex">
+            <div className="hidden h-full md:block">
+              <Logo />
+            </div>
             <FooterItem
               title="Menu"
               list={[
@@ -75,7 +98,7 @@ export const Layout: LayoutType = (props) => {
             />
             <FooterItem title="Contacto" list={contactData} />
           </div>
-          <div className="mt-2">
+          <div className="mt-2 md:flex">
             <p className="text-primary mb-2 font-bold opacity-50">Siguenos</p>
             <div className="flex">
               <img src={facebookIcon} alt="" className="icon" />
@@ -94,10 +117,10 @@ export const Layout: LayoutType = (props) => {
     </article>
   );
 };
-type LogoProps = { isWhite?: boolean };
-const Logo = ({ isWhite = false }: LogoProps) => (
+type LogoProps = { isWhite?: boolean; className?: string };
+const Logo = ({ isWhite = false, className }: LogoProps) => (
   <img
-    className="object-contain h-12"
+    className={`object-contain h-12 ${className}`}
     src={isWhite ? logoWhite : logo}
     alt="Amkel soluciones coorporativas "
   />

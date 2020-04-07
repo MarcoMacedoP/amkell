@@ -15,17 +15,19 @@ export const Button: ButtonType = ({
   onClick = () => {},
 }) => {
   return (
-    <button
-      className={`p-2 w-full rounded-lg transition-color duration-300 ease-in ${
-        color === "primary"
-          ? "bg-primary text-white hover:bg-red-700 active:bg-red-700 focus:bg-red-700"
-          : color === "secondary"
-          ? "bg-black text-white hover:bg-gray-800"
-          : "bg-transparent text-blue-500 hover:bg-gray-200"
-      } ${className}`}
-      onClick={onClick}
-    >
-      <p>{text}</p>
-    </button>
+    <div className={className}>
+      <button
+        className={`p-2 w-full rounded-lg transition-color duration-300 ease-in ${
+          color === "primary"
+            ? "bg-primary text-white hover:bg-red-700 active:bg-red-700 focus:bg-red-700"
+            : color === "secondary"
+            ? "bg-black text-white hover:bg-gray-800"
+            : "bg-transparent text-blue-500 hover:bg-gray-200"
+        } `}
+        onClick={onClick}
+      >
+        <p>{text}</p>
+      </button>
+    </div>
   );
 };
