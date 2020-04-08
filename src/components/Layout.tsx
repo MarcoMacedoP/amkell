@@ -38,7 +38,7 @@ export const Layout: LayoutType = (props) => {
   }, []);
 
   return (
-    <article className="w-full h-screen box-content w-full overflow-x-hidden">
+    <article className="h-screen box-content w-full overflow-x-hidden">
       <nav className="py-2 px-6 box-border fixed top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md z-50">
         <Logo />
         <button className="material-icons lg:hidden" onClick={handleClick}>

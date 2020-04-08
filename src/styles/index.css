@@ -66,5 +66,11 @@
     @apply w-2 h-2;
 }
 .filter-brightness{
-    filter:brightness(0.9)
+    filter:brightness(0.5)
+}
+.transition {
+    transition: font-size .5s;
+}
+.box-red {
+    @apply border-solid border-8 border-primary
 }

@@ -8313,6 +8313,10 @@ video {
   font-size: 4rem;
 }
 
+.text-8xl {
+  font-size: 8rem;
+}
+
 .italic {
   font-style: italic;
 }
@@ -11206,7 +11210,17 @@ video {
 }
 
 .filter-brightness{
-  filter:brightness(0.9)
+  filter:brightness(0.5)
+}
+
+.transition {
+  transition: font-size .5s;
+}
+
+.box-red {
+  border-style: solid;
+  border-width: 8px;
+  border-color: #F52A26
 }
 
 @media (min-width: 640px) {
@@ -18915,6 +18929,10 @@ video {
 
   .sm\:text-6xl {
     font-size: 4rem;
+  }
+
+  .sm\:text-8xl {
+    font-size: 8rem;
   }
 
   .sm\:italic {
@@ -29421,6 +29439,10 @@ video {
     font-size: 4rem;
   }
 
+  .md\:text-8xl {
+    font-size: 8rem;
+  }
+
   .md\:italic {
     font-style: italic;
   }
@@ -39925,6 +39947,10 @@ video {
     font-size: 4rem;
   }
 
+  .lg\:text-8xl {
+    font-size: 8rem;
+  }
+
   .lg\:italic {
     font-style: italic;
   }
@@ -50427,6 +50453,10 @@ video {
 
   .xl\:text-6xl {
     font-size: 4rem;
+  }
+
+  .xl\:text-8xl {
+    font-size: 8rem;
   }
 
   .xl\:italic {
