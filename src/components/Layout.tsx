@@ -23,7 +23,7 @@ const CONTACT_DATA = [
 ];
 
 export const Layout: LayoutType = (props) => {
-  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(true);
+  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(false);
   const [contactData] = useState(CONTACT_DATA);
   function handleClick() {
     console.log("click");
@@ -38,11 +38,12 @@ export const Layout: LayoutType = (props) => {
       setHasClickedOnMenu(true);
     }
   }, []);
+
   const closeMenu = () => setHasClickedOnMenu(false);
 
   return (
     <article className="h-screen box-content w-full overflow-x-hidden">
-      <nav className="py-2 px-6 box-border fixed top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md z-50">
+      <nav className="py-2 px-6 box-border sticky top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md z-50">
         <Link to="/">
           <Logo />
         </Link>
@@ -90,7 +91,7 @@ export const Layout: LayoutType = (props) => {
           </li>
         </ul>
       </nav>
-      <section className="w-full min-h-screen mt-16 px-2 box-border overflow-hidden md:px-16 lg:px-24">
+      <section className="w-full min-h-screen px-2 box-border overflow-hidden md:px-16 lg:px-24">
         {props.children}
       </section>
       <footer className="w-full h-48 mt-16  justify-between">

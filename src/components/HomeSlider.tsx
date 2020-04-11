@@ -73,7 +73,7 @@ type SectionLinkProps = {
 const SectionLink = ({ to, isActive, index, title }: SectionLinkProps) => (
   <Link
     to={to}
-    className={`w-2/6 h-24 flex flex-col text-sm uppercase justify-center px-2 transition-colors duration-300 ease-in md:w-1/6 ${
+    className={`w-2/6 h-24 flex flex-col text-xs uppercase justify-center px-2 transition-colors duration-300 ease-in md:w-1/6 ${
       isActive
         ? "bg-primary text-white hover:bg-red-700"
         : "bg-gray-100 text-black hover:bg-gray-300"
