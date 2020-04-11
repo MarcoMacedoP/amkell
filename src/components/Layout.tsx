@@ -7,6 +7,8 @@ import instagramIcon from "../assets/icons/instagram-icon.svg";
 import buildIcon from "../assets/icons/build-icon.svg";
 import phoneIcon from "../assets/icons/phone-icon.svg";
 import whatsappIcon from "../assets/icons/whatsapp-icon.svg";
+import { Link } from "react-router-dom";
+import { ActiveLink } from "./ActiveLink";
 type Props = {};
 type LayoutType = React.FC<Props>;
 
@@ -21,7 +23,7 @@ const CONTACT_DATA = [
 ];
 
 export const Layout: LayoutType = (props) => {
-  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(false);
+  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(true);
   const [contactData] = useState(CONTACT_DATA);
   function handleClick() {
     console.log("click");
@@ -36,11 +38,14 @@ export const Layout: LayoutType = (props) => {
       setHasClickedOnMenu(true);
     }
   }, []);
+  const closeMenu = () => setHasClickedOnMenu(false);
 
   return (
     <article className="h-screen box-content w-full overflow-x-hidden">
       <nav className="py-2 px-6 box-border fixed top-0 bg-gray-200 top-0 w-screen left-0 flex items-center justify-between shadow-md z-50">
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <button className="material-icons lg:hidden" onClick={handleClick}>
           menu
         </button>
@@ -55,11 +60,24 @@ export const Layout: LayoutType = (props) => {
           >
             close
           </span>
-          <li>Soluciones</li>
-          <li>Materiales</li>
-          <li>Galería</li>
-          <li>Proyectos</li>
-          <li>Contacto</li>
+          <ActiveLink to="/empresa" onClick={closeMenu}>
+            Empresa
+          </ActiveLink>
+          <ActiveLink to="/soluciones" onClick={closeMenu}>
+            Soluciones
+          </ActiveLink>
+          <ActiveLink to="/materiales" onClick={closeMenu}>
+            Materiales
+          </ActiveLink>
+          <ActiveLink to="/galeria" onClick={closeMenu}>
+            Galería
+          </ActiveLink>
+          <ActiveLink to="/proyectos" onClick={closeMenu}>
+            Proyectos
+          </ActiveLink>
+          <ActiveLink to="/contacto" onClick={closeMenu}>
+            Contacto
+          </ActiveLink>
           <li className="items-center hidden lg:flex">
             <div className="flex items-center">
               <img src={whatsappIcon} alt="" className="icon" />
@@ -72,7 +90,7 @@ export const Layout: LayoutType = (props) => {
           </li>
         </ul>
       </nav>
-      <section className="w-full mt-16 px-2 box-border overflow-hidden md:px-16 lg:px-24">
+      <section className="w-full min-h-screen mt-16 px-2 box-border overflow-hidden md:px-16 lg:px-24">
         {props.children}
       </section>
       <footer className="w-full h-48 mt-16  justify-between">
