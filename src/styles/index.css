@@ -2,75 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+p {
+  color: #bab9b8;
+}
 .material-icons {
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0.75;
-    padding: 4px;
-    display: flex;
-    justify-content: center;
-    z-index: 0;
-    transition: opacity 800ms ease-in, background-color 800ms ease, color;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.75;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  transition: opacity 800ms ease-in, background-color 800ms ease, color;
 }
 .material-icons:hover,
 .material-icons:focus,
 .material-icons:active {
-    @apply text-white;
-    opacity: 75;
-    background-color: rgba(255, 255, 255, 0.75);
+  @apply text-white;
+  opacity: 75;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
-.Layout__menu{
-    @apply bg-gray-200 absolute  rounded-lg shadow-xl overflow-hidden flex flex-col;
-    top: 1rem;
-    right: 1rem;
-    transition-timing-function: ease-in;
-    transition-duration: 100ms;
-    transition-property: width, height, padding;
+.Layout__menu {
+  @apply bg-gray-200 absolute  rounded-lg shadow-xl overflow-hidden flex flex-col;
+  top: 1rem;
+  right: 1rem;
+  transition-timing-function: ease-in;
+  transition-duration: 100ms;
+  transition-property: width, height, padding;
 }
-.Layout__menu li{
-    @apply transition-colors duration-200 ease-in p-2 rounded-lg cursor-pointer;
+.Layout__menu li {
+  @apply transition-colors duration-200 ease-in p-2 rounded-lg cursor-pointer;
 }
-.Layout__menu .close-icon{
-    right: 0.5rem;
-    top: 0.5rem;
+.Layout__menu .close-icon {
+  right: 0.5rem;
+  top: 0.5rem;
 }
 .Layout__menu li:hover,
 .Layout__menu li:active,
 .Layout__menu li:focus {
-    @apply bg-gray-300;
+  @apply bg-gray-300;
 }
-@media (min-width: 1024px){
-    .Layout__menu{
-        top: 0;
-        right: 0;
-        @apply shadow-none bg-transparent p-0 flex items-center h-full justify-end flex-row;
-    }
-    .Layout__menu li{
-        @apply text-black;
-    }
-    .Layout__menu li:hover,
-    .Layout__menu li:active,
-    .Layout__menu li:focus {
-        @apply text-primary bg-transparent;
-    }
+@media (min-width: 1024px) {
+  .Layout__menu {
+    top: 0;
+    right: 0;
+    @apply shadow-none bg-transparent p-0 flex items-center h-full justify-end flex-row;
+  }
+  .Layout__menu li {
+    @apply text-black;
+  }
+  .Layout__menu li:hover,
+  .Layout__menu li:active,
+  .Layout__menu li:focus {
+    @apply text-primary bg-transparent;
+  }
 }
-.line{
-    @apply bg-primary w-16 h-1;
+.line {
+  @apply bg-primary w-16 h-1;
 }
 .icon {
-    @apply w-4 h-4 m-1;
-
+  @apply w-4 h-4 m-1;
 }
 .icon.small {
-    @apply w-2 h-2;
+  @apply w-2 h-2;
 }
-.filter-brightness{
-    filter:brightness(0.5)
+.filter-brightness {
+  filter: brightness(0.5);
 }
 .transition {
-    transition: font-size .5s;
+  transition: font-size 0.5s;
 }
 .box-red {
-    @apply border-solid border-8 border-primary
+  @apply border-solid border-8 border-primary;
 }

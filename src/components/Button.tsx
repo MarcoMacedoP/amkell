@@ -26,7 +26,17 @@ export const Button: ButtonType = ({
         } `}
         onClick={onClick}
       >
-        <p>{text}</p>
+        <p
+          className={
+            color === "primary"
+              ? "text-white"
+              : color === "secondary"
+              ? "text-white"
+              : "text-blue-500"
+          }
+        >
+          {text}
+        </p>
       </button>
     </div>
   );

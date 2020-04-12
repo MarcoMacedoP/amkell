@@ -11112,6 +11112,10 @@ video {
   transition-duration: 1000ms;
 }
 
+p {
+  color: #bab9b8;
+}
+
 .material-icons {
   border-radius: 50%;
   cursor: pointer;
@@ -11131,7 +11135,7 @@ video {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-.Layout__menu{
+.Layout__menu {
   background-color: #F2F2F2;
   position: absolute;
   border-radius: 0.5rem;
@@ -11146,7 +11150,7 @@ video {
   transition-property: width, height, padding;
 }
 
-.Layout__menu li{
+.Layout__menu li {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
@@ -11155,7 +11159,7 @@ video {
   cursor: pointer;
 }
 
-.Layout__menu .close-icon{
+.Layout__menu .close-icon {
   right: 0.5rem;
   top: 0.5rem;
 }
@@ -11166,8 +11170,8 @@ video {
   background-color: #e2e8f0;
 }
 
-@media (min-width: 1024px){
-  .Layout__menu{
+@media (min-width: 1024px) {
+  .Layout__menu {
     top: 0;
     right: 0;
     box-shadow: none;
@@ -11180,19 +11184,19 @@ video {
     flex-direction: row;
   }
 
-  .Layout__menu li{
+  .Layout__menu li {
     color: #595959;
   }
 
   .Layout__menu li:hover,
-    .Layout__menu li:active,
-    .Layout__menu li:focus {
+  .Layout__menu li:active,
+  .Layout__menu li:focus {
     color: #F52A26;
     background-color: transparent;
   }
 }
 
-.line{
+.line {
   background-color: #F52A26;
   width: 4rem;
   height: 0.25rem;
@@ -11209,18 +11213,18 @@ video {
   height: 0.5rem;
 }
 
-.filter-brightness{
-  filter:brightness(0.5)
+.filter-brightness {
+  filter: brightness(0.5);
 }
 
 .transition {
-  transition: font-size .5s;
+  transition: font-size 0.5s;
 }
 
 .box-red {
   border-style: solid;
   border-width: 8px;
-  border-color: #F52A26
+  border-color: #F52A26;
 }
 
 @media (min-width: 640px) {
