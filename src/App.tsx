@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { HomePage } from "./pages/Home";
 import { MaterialsPage } from "./pages/Materials";
+import { ProyectsPage } from "./pages/Proyects";
 import { CompanyPage } from "./pages/Company";
 import { SolutionsPage } from "./pages/Solutions";
 
@@ -14,6 +15,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route path="/proyectos">
+            <ProyectsPage />
           </Route>
           <Route path="/materiales">
             <MaterialsPage />

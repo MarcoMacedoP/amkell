@@ -7,7 +7,7 @@ type HeaderType = React.FC<{}>;
 
 export const Header: HeaderType = () => {
   return (
-    <picture className=" bg-brown block w-screen h-40 bg-no-repeat -ml-2 bg-center bg-cover w-full">
+    <picture className=" bg-brown block w-screen h-40 bg-no-repeat -ml-2 bg-center bg-cover w-full mb-8">
       <img
         className="object-cover object-center h-full"
         src={banner}

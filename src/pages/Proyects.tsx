@@ -12,9 +12,9 @@ import decksImage from "../assets/img/decks-material.png";
 
 
 type Props = {};
-type MaterialsType = React.FC<Props>;
+type ProyectsType = React.FC<Props>;
 
-export const MaterialsPage: MaterialsType = (props) => {
+export const ProyectsPage: ProyectsType = (props) => {
   return (
     <>
       <Header />
@@ -23,7 +23,7 @@ export const MaterialsPage: MaterialsType = (props) => {
         <div className="w-full">
           <div className="line mb-2 uppercase" />
           <h2 className="text-primary text-2xl mb-2 md:mb-8">
-            MATERIALES
+            PROYECTOS
           </h2>
         </div>
         <div className="flex flex-row flex-wrap p-4 md:p-0 md:flex-col md:mb-16">
