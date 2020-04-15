@@ -17,7 +17,7 @@ export const ImageBoxText: ImageWithBoxType = ({
   classNameImg= "",
 }) => {
   return (
-    <div className={`relative w-full flex mb-2 ${ isPrimary ? "md:w-1/2 justify-end" : "md:w-1/2 justify-start" } ${className}`}>
+    <div className={`relative w-full h-5/6 flex mb-2 ${ isPrimary ? "md:w-1/2 justify-end" : "md:w-1/2 justify-start" } ${className}`}>
       <img
         src={image}
         className={`w-full h-5/6 object-cover object-center md:h-full ${isPrimary && "md:w-full"} ${classNameImg}`}

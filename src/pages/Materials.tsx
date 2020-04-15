@@ -27,7 +27,7 @@ export const MaterialsPage: MaterialsType = (props) => {
           </h2>
         </div>
         <div className="flex flex-row flex-wrap p-4 md:p-0 md:flex-col md:mb-16">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col fadeInLeft md:flex-row">
             <ImageBoxText  
               image={alucobondImage} 
               title="ALUCOBOND"
@@ -40,7 +40,7 @@ export const MaterialsPage: MaterialsType = (props) => {
             </p>
           </div>
           <br/><hr/><br/>
-          <div className="flex flex-col-reverse md:flex-row">
+          <div className="flex flex-col-reverse fadeInRight md:flex-row">
             <p className="text-gray-1000 w-full md:w-1/2 md:pr-4 text-justify justify-start">
               La celosía arquitectónica o conocida como louver, es además una solución 
               arquitectónica de la incidencia solar de la cual se puede mitigar o 
@@ -53,8 +53,7 @@ export const MaterialsPage: MaterialsType = (props) => {
             />
           </div>
           <br/><hr/><br/>
-
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col fadeInLeft md:flex-row">
             <ImageBoxText  
               image={terracotaImage} 
               title="TERRACOTA EXTRUIDA"
@@ -76,7 +75,7 @@ export const MaterialsPage: MaterialsType = (props) => {
             </p>
           </div>
           <br/><hr/><br/>
-          <div className="flex flex-col-reverse md:flex-row">
+          <div className="flex flex-col-reverse fadeInRight md:flex-row">
             <p className="text-gray-1000 w-full md:w-1/2 md:pr-4 text-justify justify-start">
               HPL MEG de la prestigiosa marca italiana Abet Laminati son paneles laminados de 
               revestimiento para interiores y exteriores, elaborados con madera prensada, fibra, 
@@ -89,8 +88,7 @@ export const MaterialsPage: MaterialsType = (props) => {
             />
           </div>
           <br/><hr/><br/>
-
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col fadeInLeft md:flex-row">
             <ImageBoxText  
               image={fibrocementoImage} 
               title="FIBROCEMENTO"
@@ -102,7 +100,7 @@ export const MaterialsPage: MaterialsType = (props) => {
             </p>
           </div>
           <br/><hr/><br/>
-          <div className="flex flex-col-reverse md:flex-row">
+          <div className="flex flex-col-reverse fadeInRight md:flex-row">
             <p className="text-gray-1000 w-full md:w-1/2 md:pr-4 text-justify justify-start">
               Infinity del grupo Concorde es líder de los productores italianos en pisos y 
               revestimientos en paredes, y ha trabajado en la industria del diseño y 
@@ -136,8 +134,7 @@ export const MaterialsPage: MaterialsType = (props) => {
             />
           </div>
           <br/><hr/><br/>
-
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col fadeInLeft md:flex-row">
             <ImageBoxText  
               image={decksImage} 
               title="DECKS"
@@ -148,9 +145,7 @@ export const MaterialsPage: MaterialsType = (props) => {
               humedad y agentes atmosféricos, contamos con una gama de colores naturales que dan la 
               apariencia natural de la madera.
             </p>
-          </div>
-
-          
+          </div>          
         </div>
       </section>
 

@@ -11262,13 +11262,49 @@ p {
 }
 
 .transition {
-  transition: font-size 0.5s;
+  transition: font-size 0.2s;
 }
 
 .box-red {
   border-style: solid;
   border-width: 8px;
   border-color: #F52A26;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+  animation-duration: 2s;
+  animation-fill-mode: both;
 }
 
 @media (min-width: 640px) {
@@ -53477,4 +53513,4 @@ p {
   .xl\:duration-1000 {
     transition-duration: 1000ms;
   }
-}
+} 
