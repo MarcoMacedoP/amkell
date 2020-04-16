@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54.734" height="54.243" viewBox="0 0 54.734 54.243">
+  <g id="exteriores" transform="translate(-5124.665 -1707.49)">
+    <path id="Trazado_134" data-name="Trazado 134" d="M5126.166,1724.331l26.5,17.772,23.918-16.942-24.949-16.171Z" fill="none" stroke="#595959" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="Trazado_135" data-name="Trazado 135" d="M5127.482,1740.112l24.1,20.1,26.321-19.266-24.95-16.171Z" fill="none" stroke="#595959" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <line id="Línea_20" data-name="Línea 20" x1="0.83" y2="50.417" transform="translate(5151.579 1709.791)" fill="none" stroke="#595959" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <line id="Línea_21" data-name="Línea 21" x2="1.316" y2="15.781" transform="translate(5126.166 1724.331)" fill="none" stroke="#595959" stroke-miterlimit="10" stroke-width="3"/>
+    <line id="Línea_22" data-name="Línea 22" x2="1.316" y2="15.781" transform="translate(5176.583 1725.161)" fill="none" stroke="#595959" stroke-miterlimit="10" stroke-width="3"/>
+  </g>
+</svg>
