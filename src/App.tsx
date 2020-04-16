@@ -7,6 +7,7 @@ import { MaterialsPage } from "./pages/Materials";
 import { ProyectsPage } from "./pages/Proyects";
 import { CompanyPage } from "./pages/Company";
 import { SolutionsPage } from "./pages/Solutions";
+import { GalleryPage } from "./pages/Gallery";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/empresa">
             <CompanyPage />
+          </Route>
+          <Route path="/galeria">
+            <GalleryPage />
           </Route>
           <Route path="/soluciones">
             <SolutionsPage />
