@@ -21,20 +21,23 @@ const CONTACT_DATA = [
   "CP: 44600",
   "Guadalajara Jalisco,Mex",
 ];
-
+function getWidth() {
+  const width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  return { width };
+}
 export const Layout: LayoutType = (props) => {
   const [hasClickedOnMenu, setHasClickedOnMenu] = useState(false);
   const [contactData] = useState(CONTACT_DATA);
+  const { width } = getWidth();
+  const hasMenu = width < 800;
   function handleClick() {
-    console.log("click");
     setHasClickedOnMenu(!hasClickedOnMenu);
   }
   useEffect(() => {
-    const width =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-    if (width > 1024) {
+    if (!hasMenu) {
       setHasClickedOnMenu(true);
     }
   }, []);
@@ -61,24 +64,12 @@ export const Layout: LayoutType = (props) => {
           >
             close
           </span>
-          <ActiveLink to="/empresa" onClick={closeMenu}>
-            Empresa
-          </ActiveLink>
-          <ActiveLink to="/soluciones" onClick={closeMenu}>
-            Soluciones
-          </ActiveLink>
-          <ActiveLink to="/materiales" onClick={closeMenu}>
-            Materiales
-          </ActiveLink>
-          <ActiveLink to="/galeria" onClick={closeMenu}>
-            Galería
-          </ActiveLink>
-          <ActiveLink to="/proyectos" onClick={closeMenu}>
-            Proyectos
-          </ActiveLink>
-          <ActiveLink to="/contacto" onClick={closeMenu}>
-            Contacto
-          </ActiveLink>
+          <ActiveLink to="/empresa">Empresa</ActiveLink>
+          <ActiveLink to="/soluciones">Soluciones</ActiveLink>
+          <ActiveLink to="/materiales">Materiales</ActiveLink>
+          <ActiveLink to="/galeria">Galería</ActiveLink>
+          <ActiveLink to="/proyectos">Proyectos</ActiveLink>
+          <ActiveLink to="/contacto">Contacto</ActiveLink>
           <li className="items-center hidden lg:flex">
             <div className="flex items-center">
               <img src={whatsappIcon} alt="" className="icon" />

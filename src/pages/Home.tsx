@@ -70,8 +70,10 @@ export const HomePage: HomeType = (props) => {
             title="Soluciones en interiores"
           />
         </div>
-        <div className="bg-brown w-screen h-middle -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center md:-ml-16 lg:-ml-24" 
-             style={{ backgroundImage: `url(${buildingImage})` }}>
+        <div
+          className="bg-brown w-screen h-middle -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center md:-ml-16 lg:-ml-24"
+          style={{ backgroundImage: `url(${buildingImage})` }}
+        >
           <AboutIcon
             title="Planificación"
             image={planificacionIcon}

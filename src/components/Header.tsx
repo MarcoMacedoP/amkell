@@ -18,11 +18,10 @@ export const Header: HeaderType = () => {
         />
       </picture>
 
-
-      <div className="hidden md:block bg-brown w-screen h-middle -mt-64 -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center md:-ml-16 lg:-ml-24" 
-            style={{ backgroundImage: `url(${banner2x})`, backgroundSize: 'cover' }}>
-      </div>
+      <div
+        className="hidden md:block bg-brown w-screen h-middle -mt-64 -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center md:-ml-16 lg:-ml-24"
+        style={{ backgroundImage: `url(${banner2x})`, backgroundSize: "cover" }}
+      ></div>
     </>
-
   );
 };
