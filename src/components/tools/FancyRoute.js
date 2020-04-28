@@ -9,7 +9,9 @@ class FancyRoute extends React.Component {
     nprogress.start()
   }
 
-  
+  componentDidMount() {
+    nprogress.done()
+  }
 
   render () {
     return (

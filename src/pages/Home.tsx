@@ -51,7 +51,7 @@ export const HomePage: HomeType = (props) => {
         </div>
       </section>
 
-      <section className="flex flex-col">
+      <section className="flex flex-col fadeInLeft">
         <div className="w-full">
           <div className="line mb-2 uppercase" />
           <h2 className="text-primary text-2xl mb-2 md:mb-8">
