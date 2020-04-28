@@ -58,22 +58,22 @@ export const Layout: LayoutType = (props) => {
             close
           </span>
           <ActiveLink to="/compañia" onClick={closeMenu}>
-            Empresa
+            <span className="p-2 hover-animate-a"> Empresa </span>
           </ActiveLink>
           <ActiveLink to="/soluciones" onClick={closeMenu}>
-            Soluciones
+            <span className="p-2 hover-animate-a"> Soluciones </span>
           </ActiveLink>
           <ActiveLink to="/materiales" onClick={closeMenu}>
-            Materiales
+            <span className="p-2 hover-animate-a"> Materiales </span>
           </ActiveLink>
           <ActiveLink to="/galeria" onClick={closeMenu}>
-            Galería
+            <span className="p-2 hover-animate-a"> Galería </span>
           </ActiveLink>
           <ActiveLink to="/proyectos" onClick={closeMenu}>
-            Proyectos
+            <span className="p-2 hover-animate-a"> Proyectos </span>
           </ActiveLink>
           <ActiveLink to="/contacto" onClick={closeMenu}>
-            Contacto
+            <span className="p-2 hover-animate-a"> Contacto </span>
           </ActiveLink>
           <li className="items-center hidden lg:flex">
             <div className="flex items-center">

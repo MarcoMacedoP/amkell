@@ -136,5 +136,9 @@ p {
 .box-url:hover {
   transition: 0.8s;
   filter: brightness(0.5);
-  
+}
+
+.hover-animate-a:hover {
+  transition: 0.5s;
+  @apply rounded-md p-1 text-primary
 }

@@ -10,7 +10,7 @@ type ContactType = React.FC<Props>;
 export const ContactPage: ContactType = (props) => {
   return (
     <>
-      <Header />
+      <Header contact />
 
       <section className="flex flex-col">
         <div className="w-full">
