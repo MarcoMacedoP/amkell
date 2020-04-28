@@ -2,6 +2,16 @@ import React from "react";
 //Materiales
 import banner from "../assets/img/banner-2x.jpg";
 import { Header } from "../components/Header";
+import AbetLaminati from "../assets/empresas/logo_Amkel_AbetLaminati.svg";
+import Amevec from "../assets/empresas/logo_Amkel_Amevec.png";
+import Cembrit from "../assets/empresas/logo_Amkel_Cembrit.png";
+import Louvelia from "../assets/empresas/logo_Amkel_Louvelia.png";
+import Madertech from "../assets/empresas/logo_Amkel_Madertech.png";
+import Reynobond from "../assets/empresas/logo_Amkel_Reynobond.png";
+import Stacbond from "../assets/empresas/logo_Amkel_Stacbond.png";
+import Valchromat from "../assets/empresas/logo_Amkel_Valchromat.png";
+import Viroc from "../assets/empresas/logo_Amkel_Viroc.png";
+import '../styles/hover-box.css'
 
 type Props = {};
 type CompanyType = React.FC<Props>;
@@ -86,7 +96,7 @@ export const CompanyPage: CompanyType = (props) => {
         </div>
       </section>
 
-      <section className="flex flex-wrap m-4 w-full flex-col-reverse mb-8 md:flex-row md:flex-no-wrap lg:mb-32">
+      <section className="flex flex-wrap m-4 w-full flex-col-reverse mb-8 md:flex-row md:flex-no-wrap">
         <div className="flex-col flex md:w-3/6 md:ml-4 lg:ml-6 md:self-center  md:justify-between">
           <div>
             <div className="line mb-2" />
@@ -96,6 +106,38 @@ export const CompanyPage: CompanyType = (props) => {
           </div>
         </div>
       </section>
+      <section className="flex flex-wrap w-full flex-col md:flex-row">
+        
+          <a href="http://abetlaminati.com/en/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={AbetLaminati} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="http://amevec.mx/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Amevec} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="https://www.cembrit.com/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Cembrit} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="http://www.louvelia.com/?lang=es" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Louvelia} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="http://www.madertech.es/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Madertech} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="https://www.alcoa.com/global/en/home.asp" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Reynobond} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="https://www.stacbond.es/paginas/inicio" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Stacbond} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="http://www.valchromat.pt/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Valchromat} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+          <a href="http://www.viroc.pt/homepage.aspx" target="_blank" className="box-url w-full md:w-1/4 p-8">
+            <img src={Viroc} alt="logo" className="ml-8 md:m-0 w-64" />
+          </a>
+        
+      </section>
+
     </>
   );
 };

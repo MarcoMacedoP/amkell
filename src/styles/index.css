@@ -131,3 +131,10 @@ p {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 } 
+
+
+.box-url:hover {
+  transition: 0.8s;
+  filter: brightness(0.5);
+  
+}

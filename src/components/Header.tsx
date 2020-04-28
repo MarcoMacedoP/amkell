@@ -10,7 +10,7 @@ export const Header: HeaderType = () => {
     <>
       <picture className="md:hidden bg-brown block w-screen h-40 bg-no-repeat -ml-2 bg-center bg-cover w-full mb-8">
         <img
-          className="object-cover object-center h-full"
+          className="object-cover object-center h-full filter-brightness"
           src={banner}
           alt=""
           srcSet={`${banner} 375w, ${banner15x} 769w, ${banner2x} 3200w`}
@@ -19,7 +19,7 @@ export const Header: HeaderType = () => {
       </picture>
 
 
-      <div className="hidden md:block bg-brown w-screen h-middle -mt-64 -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center md:-ml-16 lg:-ml-24" 
+      <div className="hidden md:block bg-brown w-screen h-middle -mt-64 -ml-5 mb-10 bg-contain bg-no-repeat py-8 box-content bg-left flex flex-col justify-center items-center md:-ml-16 lg:-ml-24 filter-brightness" 
             style={{ backgroundImage: `url(${banner2x})`, backgroundSize: 'cover' }}>
       </div>
     </>

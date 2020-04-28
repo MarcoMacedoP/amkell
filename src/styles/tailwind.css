@@ -11322,6 +11322,11 @@ p {
   animation-fill-mode: both;
 }
 
+.box-url:hover {
+  transition: 0.8s;
+  filter: brightness(0.5);
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
@@ -53524,4 +53529,4 @@ p {
   .xl\:duration-1000 {
     transition-duration: 1000ms;
   }
-} 
+}

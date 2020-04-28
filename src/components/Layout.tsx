@@ -57,7 +57,7 @@ export const Layout: LayoutType = (props) => {
           >
             close
           </span>
-          <ActiveLink to="/" onClick={closeMenu}>
+          <ActiveLink to="/compañia" onClick={closeMenu}>
             Empresa
           </ActiveLink>
           <ActiveLink to="/soluciones" onClick={closeMenu}>
