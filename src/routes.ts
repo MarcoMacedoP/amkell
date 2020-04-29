@@ -4,6 +4,7 @@ import { ProyectsPage } from "./pages/Proyects";
 import { ContactPage } from "./pages/Contact";
 import { CompanyPage } from "./pages/Company";
 import { SolutionsPage } from "./pages/Solutions";
+import { GalleryPage } from "./pages/Gallery";
 
 const routes = [
   {
@@ -39,6 +40,11 @@ const routes = [
     title: 'Soluciones',
     path: '/soluciones',
     component: SolutionsPage
+  }, {
+    title: 'Galería',
+    path: '/galeria',
+    component: GalleryPage
+
   }
 ]
 

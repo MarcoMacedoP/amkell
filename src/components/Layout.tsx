@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import logo from "../assets/img/logo.png";
 import logoWhite from "../assets/img/logo-white.png";
@@ -21,20 +22,23 @@ const CONTACT_DATA = [
   "CP: 44600",
   "Guadalajara Jalisco,Mex",
 ];
-
+function getWidth() {
+  const width =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  return { width };
+}
 export const Layout: LayoutType = (props) => {
   const [hasClickedOnMenu, setHasClickedOnMenu] = useState(true);
   const [contactData] = useState(CONTACT_DATA);
+  const { width } = getWidth();
+  const hasMenu = width < 800;
   function handleClick() {
-    console.log("click");
     setHasClickedOnMenu(!hasClickedOnMenu);
   }
   useEffect(() => {
-    const width =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-    if (width > 1024) {
+    if (!hasMenu) {
       setHasClickedOnMenu(true);
     }
   }, []);
@@ -50,7 +54,9 @@ export const Layout: LayoutType = (props) => {
         <button className="material-icons lg:hidden" onClick={handleClick}>
           menu
         </button>
-        <ul className={`Layout__menu w-0 h-0 p-0 lg:relative lg:flex-end md:w-2/3 md:h-auto`}>
+        <ul
+          className={`Layout__menu w-0 h-0 p-0 lg:relative lg:flex-end md:w-2/3 md:h-auto`}
+        >
           <span
             className="close-icon material-icons absolute top-0 text-gray-400 lg:hidden"
             onClick={handleClick}
@@ -87,10 +93,8 @@ export const Layout: LayoutType = (props) => {
           </li>
         </ul>
         <ul
-          className={
-            `Layout__menu lg:hidden
-            ${hasClickedOnMenu ? "w-2/3 h-auto py-8 px-6" : "w-0 h-0 p-0"}`
-          }
+          className={`Layout__menu lg:hidden
+            ${hasClickedOnMenu ? "w-2/3 h-auto py-8 px-6" : "w-0 h-0 p-0"}`}
         >
           <span
             className="close-icon material-icons absolute top-0 text-gray-400 lg:hidden"
