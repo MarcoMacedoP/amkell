@@ -6,7 +6,7 @@ type HomeSliderType = React.FC<Props>;
 
 export const HomeSlider: HomeSliderType = (props) => {
   return (
-    <nav className="w-screen -ml-2 mb-8 md:ml-0 md:w-full lg:h-screen">
+    <nav className="w-screen -ml-2 mb-8 md:ml-0 md:w-full lg:h-screen fadeIn">
       <div className=" bg-black h-4/6 p-2 relative lg:p-8">
         <div
           className="h-full w-full bg-cover bg-center absolute top-0 bottom-0 left-0 right-0 z-0 filter-brightness"

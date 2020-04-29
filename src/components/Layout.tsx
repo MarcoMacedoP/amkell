@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import logo from "../assets/img/logo.png";
 import logoWhite from "../assets/img/logo-white.png";
@@ -29,7 +30,7 @@ function getWidth() {
   return { width };
 }
 export const Layout: LayoutType = (props) => {
-  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(false);
+  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(true);
   const [contactData] = useState(CONTACT_DATA);
   const { width } = getWidth();
   const hasMenu = width < 800;
@@ -54,9 +55,7 @@ export const Layout: LayoutType = (props) => {
           menu
         </button>
         <ul
-          className={`Layout__menu lg:relative lg:flex-end ${
-            hasClickedOnMenu ? "w-2/3 h-auto py-8 px-6" : "w-0 h-0 p-0"
-          }`}
+          className={`Layout__menu w-0 h-0 p-0 lg:relative lg:flex-end md:w-2/3 md:h-auto`}
         >
           <span
             className="close-icon material-icons absolute top-0 text-gray-400 lg:hidden"
@@ -64,12 +63,63 @@ export const Layout: LayoutType = (props) => {
           >
             close
           </span>
-          <ActiveLink to="/empresa">Empresa</ActiveLink>
-          <ActiveLink to="/soluciones">Soluciones</ActiveLink>
-          <ActiveLink to="/materiales">Materiales</ActiveLink>
-          <ActiveLink to="/galeria">Galería</ActiveLink>
-          <ActiveLink to="/proyectos">Proyectos</ActiveLink>
-          <ActiveLink to="/contacto">Contacto</ActiveLink>
+          <ActiveLink to="/compañia" onClick={closeMenu}>
+            <span className="p-2 hover-animate-a"> Empresa </span>
+          </ActiveLink>
+          <ActiveLink to="/soluciones" onClick={closeMenu}>
+            <span className="p-2 hover-animate-a"> Soluciones </span>
+          </ActiveLink>
+          <ActiveLink to="/materiales" onClick={closeMenu}>
+            <span className="p-2 hover-animate-a"> Materiales </span>
+          </ActiveLink>
+          <ActiveLink to="/galeria" onClick={closeMenu}>
+            <span className="p-2 hover-animate-a"> Galería </span>
+          </ActiveLink>
+          <ActiveLink to="/proyectos" onClick={closeMenu}>
+            <span className="p-2 hover-animate-a"> Proyectos </span>
+          </ActiveLink>
+          <ActiveLink to="/contacto" onClick={closeMenu}>
+            <span className="p-2 hover-animate-a"> Contacto </span>
+          </ActiveLink>
+          <li className="items-center hidden lg:flex">
+            <div className="flex items-center">
+              <img src={whatsappIcon} alt="" className="icon" />
+              <img src={phoneIcon} alt="" className="icon" />
+              <p className="text-sm color-black">(33) 38012003</p>
+            </div>
+            <img src={facebookIcon} alt="" className="icon" />
+            <img src={buildIcon} alt="" className="icon" />
+            <img src={instagramIcon} alt="" className="icon" />
+          </li>
+        </ul>
+        <ul
+          className={`Layout__menu lg:hidden
+            ${hasClickedOnMenu ? "w-2/3 h-auto py-8 px-6" : "w-0 h-0 p-0"}`}
+        >
+          <span
+            className="close-icon material-icons absolute top-0 text-gray-400 lg:hidden"
+            onClick={handleClick}
+          >
+            close
+          </span>
+          <ActiveLink to="/" onClick={closeMenu}>
+            Empresa
+          </ActiveLink>
+          <ActiveLink to="/soluciones" onClick={closeMenu}>
+            Soluciones
+          </ActiveLink>
+          <ActiveLink to="/materiales" onClick={closeMenu}>
+            Materiales
+          </ActiveLink>
+          <ActiveLink to="/galeria" onClick={closeMenu}>
+            Galería
+          </ActiveLink>
+          <ActiveLink to="/proyectos" onClick={closeMenu}>
+            Proyectos
+          </ActiveLink>
+          <ActiveLink to="/contacto" onClick={closeMenu}>
+            Contacto
+          </ActiveLink>
           <li className="items-center hidden lg:flex">
             <div className="flex items-center">
               <img src={whatsappIcon} alt="" className="icon" />

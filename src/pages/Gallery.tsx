@@ -14,25 +14,30 @@ import galleryImgNine from "../assets/img/galeria_9.png";
 type Props = {};
 type GalleryPageType = React.FC<Props>;
 
+const images = [
+  galleryImgOne,
+  galleryImgTwo,
+  galleryImgThree,
+  galleryImgFour,
+  galleryImgFive,
+  galleryImgSix,
+  galleryImgSeven,
+  galleryImgEight,
+  galleryImgNine,
+];
 export const GalleryPage: GalleryPageType = (props) => {
-  const images = [
-    galleryImgOne,
-    galleryImgTwo,
-    galleryImgThree,
-    galleryImgFour,
-    galleryImgFive,
-    galleryImgSix,
-    galleryImgSeven,
-    galleryImgEight,
-    galleryImgNine,
-  ];
   return (
     <>
       <Header />
       <Title>Galería</Title>
-      <section className="flex flex-wrap justify-start">
+      <section className="flex flex-wrap justify-start w-full">
         {images.map((src, index) => (
-          <img src={src} key={index} />
+          <img
+            src={src}
+            key={index}
+            alt=""
+            className="w-full md:w-1/2 lg:w-1/3"
+          />
         ))}
       </section>
     </>

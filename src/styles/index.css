@@ -77,6 +77,22 @@ p {
   @apply border-solid border-8 border-primary;
 }
 
+@keyframes fadeIn {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+}  
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+} 
 
 @keyframes fadeInLeft {
   0% {
@@ -115,3 +131,14 @@ p {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 } 
+
+
+.box-url:hover {
+  transition: 0.8s;
+  filter: brightness(0.5);
+}
+
+.hover-animate-a:hover {
+  transition: 0.5s;
+  @apply rounded-md p-1 text-primary
+}
