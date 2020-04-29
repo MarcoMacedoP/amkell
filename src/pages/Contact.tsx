@@ -21,6 +21,15 @@ export const ContactPage: ContactType = (props) => {
         </div>
       </section>
 
+      <section className="flex flex-col form-contact">
+        <div className="w-full">
+          <div className="line mb-2 uppercase" />
+          <h2 className="text-primary text-2xl mb-2 md:mb-8">
+            CONTACTO
+          </h2>
+        </div>
+      </section>
+
     </>
   );
 };
