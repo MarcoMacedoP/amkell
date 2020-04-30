@@ -1,4 +1,6 @@
 import React from "react";
+import nprogress from 'nprogress';
+
 import { Header } from "../components/Header";
 import { Title } from "../components/Title";
 import galleryImgOne from "../assets/img/galeria_1.png";
@@ -26,6 +28,10 @@ const images = [
   galleryImgNine,
 ];
 export const GalleryPage: GalleryPageType = (props) => {
+  const isLoading = true;
+  if (isLoading) {
+    nprogress.done();
+  }
   return (
     <>
       <Header />

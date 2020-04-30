@@ -1,4 +1,6 @@
 import React from "react";
+
+import nprogress from 'nprogress';
 //Materiales
 import banner from "../assets/img/banner-2x.jpg";
 import { Header } from "../components/Header";
@@ -17,6 +19,11 @@ type Props = {};
 type CompanyType = React.FC<Props>;
 
 export const CompanyPage: CompanyType = (props) => {
+  const isLoading = true;
+  if (isLoading) {
+    nprogress.done();
+  }
+
   return (
     <>
       <Header />

@@ -87,9 +87,15 @@ export const Layout: LayoutType = (props) => {
               <img src={phoneIcon} alt="" className="icon" />
               <p className="text-sm color-black">(33) 38012003</p>
             </div>
-            <img src={facebookIcon} alt="" className="icon" />
-            <img src={buildIcon} alt="" className="icon" />
-            <img src={instagramIcon} alt="" className="icon" />
+            <a href="https://www.facebook.com/amkelfachadas/" target="_blank" rel="noopener noreferrer">
+              <img src={facebookIcon} alt="" className="icon" />
+            </a>
+            <a href="https://www.facebook.com/amkelfachadas/" target="_blank" rel="noopener noreferrer">
+              <img src={buildIcon} alt="" className="icon" />
+            </a>
+            <a href="https://www.instagram.com/amkel.sa/" target="_blank" rel="noopener noreferrer">
+              <img src={instagramIcon} alt="" className="icon" />
+            </a>
           </li>
         </ul>
         <ul

@@ -1,17 +1,11 @@
 import React from "react";
 
-import { useGetCollection, useGetItemFromCollection } from "../hooks/Firebase";
+import { useGetCollection } from "../hooks/Firebase";
 import nprogress from 'nprogress'
 
 import { Header } from "../components/Header";
 import { ImageBoxText } from "../components/ImageBoxText";
-import alucobondImage from "../assets/img/alucobond-material.png";
-import celosiasImage from "../assets/img/celosias-material.png";
-import terracotaImage from "../assets/img/terracota-material.png";
-import hplImage from "../assets/img/hpl-material.png";
-import fibrocementoImage from "../assets/img/fibrocemento-material.png";
-import porcelanicoImage from "../assets/img/porcelanico-material.png";
-import decksImage from "../assets/img/decks-material.png";
+import { Loading } from "../components/Loading";
 
 type Props = {};
 type MaterialsType = React.FC<Props>;
@@ -28,7 +22,7 @@ export const MaterialsPage: MaterialsType = (props) => {
     // console.log('items : ', items);
     if (items) {
       const listItems = items.map((item: any, key) => {
-        return key % 2 == 0 ? (
+        return key % 2 === 0 ? (
           <div key={key}>
             <br />
             <div className="flex flex-col fadeInLeft md:flex-row">
@@ -70,9 +64,11 @@ export const MaterialsPage: MaterialsType = (props) => {
       );
     }
   }  
-  
+  if (isLoading) {
+    nprogress.done();
+  }
   return isLoading ? (
-    <p>Loading...</p>
+    <Loading />
   ) : !error ? (
     <>
       <Header />

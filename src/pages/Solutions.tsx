@@ -8,6 +8,7 @@ import defaultImage from "../assets/img/transformamos-ideas-realidad.png";
 import footerImage from "../assets/img/soluiciones-footer.png";
 import { Button } from "../components/Button";
 import nprogress from 'nprogress'
+import { Loading } from "../components/Loading";
 //icons
 import planificationIcon from "../assets/icons/planificacion.svg";
 import interioresIcon from "../assets/icons/Interiores.svg";
@@ -38,13 +39,13 @@ export const SolutionsPage: SolutionsType = () => {
   });
 
   useEffect(() => {
-    if (isLoading) {
-      nprogress.done();
-    };
     getCollectionData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
+  if (isLoading) {
+    nprogress.done();
+  };
   // console.log(error);
   // console.log(isLoading);
   console.log(values);
@@ -54,7 +55,7 @@ export const SolutionsPage: SolutionsType = () => {
     // console.log('items : ', items);
     if (items) {
       const listItems = items.map((item: any, key) => {
-        if (item.name == "Exteriores") {
+        if (item.name === "Exteriores") {
           return ( 
             <SolutionCard
               key={key}
@@ -65,7 +66,7 @@ export const SolutionsPage: SolutionsType = () => {
               textIsWhite
             />
           );
-        } else if( item.name == "Planeacion" ) {
+        } else if( item.name === "Planeacion" ) {
           return ( 
             <SolutionCard
               key={key}
@@ -75,7 +76,7 @@ export const SolutionsPage: SolutionsType = () => {
               title={item.name}
             />
           );
-        } else if( item.name == "Interiores" ) {
+        } else if( item.name === "Interiores" ) {
           return ( 
             <SolutionCard
               key={key}
@@ -86,7 +87,7 @@ export const SolutionsPage: SolutionsType = () => {
               textIsWhite
             />
           );
-        } else if( item.slug == "fachadas" ) {
+        } else if( item.slug === "fachadas" ) {
           return ( 
             <SolutionCard
               key={key}
@@ -97,7 +98,7 @@ export const SolutionsPage: SolutionsType = () => {
               textIsWhite
             />
           );
-        } else if( item.slug == "arquitectonicos" ) {
+        } else if( item.slug === "arquitectonicos" ) {
           return ( 
             <SolutionCard
               key={key}
@@ -135,7 +136,7 @@ export const SolutionsPage: SolutionsType = () => {
   }  
   
   return isLoading ? (
-    <p>Loading...</p>
+    <Loading />
   ) : !error ? (
     <>
       <Header />
