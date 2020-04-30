@@ -13,6 +13,8 @@ import { ActiveLink } from "./ActiveLink";
 type Props = {};
 type LayoutType = React.FC<Props>;
 
+export const PHONE_NUMBER = "3338012003";
+
 const CONTACT_DATA = [
   "Whatsapp: (33)38012003",
   "Conmutador: (33)10310952",
@@ -83,9 +85,17 @@ export const Layout: LayoutType = (props) => {
           </ActiveLink>
           <li className="items-center hidden lg:flex">
             <div className="flex items-center">
-              <img src={whatsappIcon} alt="" className="icon" />
-              <img src={phoneIcon} alt="" className="icon" />
-              <p className="text-sm color-black">(33) 38012003</p>
+              <a
+                href={`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={whatsappIcon} alt="" className="icon" />
+              </a>
+              <a href={`tel:${PHONE_NUMBER}`}>
+                <img src={phoneIcon} alt="" className="icon" />
+              </a>
+              <p className="text-sm color-black">{PHONE_NUMBER}</p>
             </div>
             <a
               href="https://www.facebook.com/amkelfachadas/"
