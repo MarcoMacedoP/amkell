@@ -5,15 +5,7 @@ import nprogress from "nprogress";
 //Materiales
 import banner from "../assets/img/banner-2x.jpg";
 import { Header } from "../components/Header";
-import AbetLaminati from "../assets/empresas/logo_Amkel_AbetLaminati.svg";
-import Amevec from "../assets/empresas/logo_Amkel_Amevec.png";
-import Cembrit from "../assets/empresas/logo_Amkel_Cembrit.png";
-import Louvelia from "../assets/empresas/logo_Amkel_Louvelia.png";
-import Madertech from "../assets/empresas/logo_Amkel_Madertech.png";
-import Reynobond from "../assets/empresas/logo_Amkel_Reynobond.png";
-import Stacbond from "../assets/empresas/logo_Amkel_Stacbond.png";
-import Valchromat from "../assets/empresas/logo_Amkel_Valchromat.png";
-import Viroc from "../assets/empresas/logo_Amkel_Viroc.png";
+
 import "../styles/hover-box.css";
 import { useGetItemFromCollection } from "../hooks/Firebase";
 type Props = {};

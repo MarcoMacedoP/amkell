@@ -4,7 +4,6 @@ import { useGetCollection, useGetItemFromCollection } from "../hooks/Firebase";
 
 import { Header } from "../components/Header";
 import { Title } from "../components/Title";
-import defaultImage from "../assets/img/transformamos-ideas-realidad.png";
 import footerImage from "../assets/img/soluiciones-footer.png";
 import { Button } from "../components/Button";
 import nprogress from "nprogress";
@@ -16,6 +15,7 @@ import exterioresIcon from "../assets/icons/exteriores.svg";
 import fachadaIcon from "../assets/icons/edificio.svg";
 import productsIcon from "../assets/icons/build-icon.svg";
 import solutionsInteriores from "../assets/icons/interiores-1.svg";
+import { Link } from "react-router-dom";
 
 type SolutionsType = React.FC<{}>;
 
@@ -57,6 +57,7 @@ export const SolutionsPage: SolutionsType = () => {
         if (item.name === "Exteriores") {
           return (
             <SolutionCard
+              slug={item.slug}
               key={key}
               icon={exterioresIcon}
               bgColor="bg-red-600"
@@ -68,6 +69,7 @@ export const SolutionsPage: SolutionsType = () => {
         } else if (item.name === "Planeacion") {
           return (
             <SolutionCard
+              slug={item.slug}
               key={key}
               icon={planificationIcon}
               bgColor="bg-yellow-500"
@@ -78,6 +80,7 @@ export const SolutionsPage: SolutionsType = () => {
         } else if (item.name === "Interiores") {
           return (
             <SolutionCard
+              slug={item.slug}
               key={key}
               icon={interioresIcon}
               bgColor="bg-blue-700"
@@ -89,6 +92,7 @@ export const SolutionsPage: SolutionsType = () => {
         } else if (item.slug === "fachadas") {
           return (
             <SolutionCard
+              slug={item.slug}
               key={key}
               icon={fachadaIcon}
               bgColor="bg-gray-700"
@@ -100,6 +104,7 @@ export const SolutionsPage: SolutionsType = () => {
         } else if (item.slug === "arquitectonicos") {
           return (
             <SolutionCard
+              slug={item.slug}
               key={key}
               icon={productsIcon}
               bgColor="bg-gray-500"
@@ -111,6 +116,7 @@ export const SolutionsPage: SolutionsType = () => {
         } else {
           return (
             <SolutionCard
+              slug={item.slug}
               key={key}
               icon={solutionsInteriores}
               bgColor="bg-blue-900"
@@ -168,6 +174,7 @@ type SolutionCardType = React.FC<{
   textIsWhite?: boolean;
   title: string;
   desc: string;
+  slug: string;
   icon: string;
 }>;
 const SolutionCard: SolutionCardType = ({
@@ -175,6 +182,7 @@ const SolutionCard: SolutionCardType = ({
   textIsWhite,
   icon,
   title,
+  slug,
   desc,
 }) => (
   <div
@@ -206,7 +214,9 @@ const SolutionCard: SolutionCardType = ({
         {desc}
       </p>
       <div className="w-full lg:w-2/3 lg:mt-2">
-        <Button text="Ver más" color="secondary" />
+        <Link to={`/soluciones/${slug}`}>
+          <Button text="Ver más" color="secondary" />
+        </Link>
       </div>
     </div>
   </div>

@@ -105,7 +105,7 @@ export const Layout: LayoutType = (props) => {
               <img src={facebookIcon} alt="" className="icon" />
             </a>
             <a
-              href="https://www.facebook.com/amkelfachadas/"
+              href="http://linkedin.com/company/amkel-soluciones-arquitectonicas/about/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -189,9 +189,27 @@ export const Layout: LayoutType = (props) => {
           <div className="mt-2 md:flex">
             <p className="text-primary mb-2 font-bold opacity-50">Siguenos</p>
             <div className="flex">
-              <img src={facebookIcon} alt="" className="icon" />
-              <img src={buildIcon} alt="" className="icon" />
-              <img src={instagramIcon} alt="" className="icon" />
+              <a
+                href="https://www.facebook.com/amkelfachadas/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={facebookIcon} alt="" className="icon" />
+              </a>
+              <a
+                href="http://linkedin.com/company/amkel-soluciones-arquitectonicas/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={buildIcon} alt="" className="icon" />
+              </a>
+              <a
+                href="https://www.instagram.com/amkel.sa/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={instagramIcon} alt="" className="icon" />
+              </a>
             </div>
           </div>
         </div>

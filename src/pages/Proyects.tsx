@@ -6,6 +6,7 @@ import nprogress from "nprogress";
 import { Header } from "../components/Header";
 import { ImageBoxText } from "../components/ImageBoxText";
 import { Loading } from "../components/Loading";
+import { Link } from "react-router-dom";
 
 type Props = {};
 type ProyectsType = React.FC<Props>;
@@ -22,7 +23,7 @@ export const ProyectsPage: ProyectsType = (props) => {
     if (items) {
       const listItems = items.map((item: any, key) => {
         return key % 2 === 0 ? (
-          <div key={key}>
+          <Link to={"/proyectos/" + item.slug} key={key} className="block">
             <br />
             <div className="flex flex-col md:flex-row fadeInLeft">
               <ImageBoxText image={item.image} title={item.name} />
@@ -32,9 +33,9 @@ export const ProyectsPage: ProyectsType = (props) => {
             </div>
             <br />
             <hr />
-          </div>
+          </Link>
         ) : (
-          <div key={key}>
+          <Link to={"/proyectos/" + item.slug} key={key} className="block">
             <br />
             <div className="flex flex-col-reverse md:flex-row fadeInRight">
               <p className="text-gray-1000 w-full md:w-1/2 md:pr-4 text-justify justify-start">
@@ -44,7 +45,7 @@ export const ProyectsPage: ProyectsType = (props) => {
             </div>
             <br />
             <hr />
-          </div>
+          </Link>
         );
       });
       return (

@@ -3,20 +3,13 @@ import React, { useEffect, useState } from "react";
 import { HomeSlider } from "../components/HomeSlider";
 import { Button } from "../components/Button";
 import { ImageWithBox } from "../components/ImageWithBox";
-import nosotrosImage from "../assets/img/nosotros.jpeg";
-import fachadaImage from "../assets/img/fachada-ventilada.jpg";
-import productsImage from "../assets/img/productos-arquitectonicos.png";
-import solutionsImage from "../assets/img/soluciones-interiores.png";
 import buildingImage from "../assets/img/structure.png";
 //icons
 import planificacionIcon from "../assets/icons/planificacion.svg";
 import interiorsIcon from "../assets/icons/Interiores.svg";
 import exterioresIcon from "../assets/icons/exteriores.svg";
 import buildIcon from "../assets/icons/build-icon.svg";
-//Materiales
 
-import alucobondIamge from "../assets/img/Alucobond.png";
-import celciasImage from "../assets/img/Celocias.png";
 import {
   useGetCollection,
   useGetItemFromCollection,
@@ -136,7 +129,7 @@ export const HomePage: HomeType = () => {
             </div>
             <div className="flex flex-wrap w-full items-center justify-center md:mt-8">
               {materiales?.map((m: any) => (
-                <MaterialCard name={m.name} image={m.images[0]} />
+                <MaterialCard name={m.name} image={m.images[0]} slug={m.slug} />
               ))}
             </div>
           </section>
@@ -171,6 +164,7 @@ type MaterialCardProps = {
   buttonText?: string;
   image: string;
   className?: string;
+  slug: string;
 };
 
 const MaterialCard = (props: MaterialCardProps) => (
@@ -183,10 +177,15 @@ const MaterialCard = (props: MaterialCardProps) => (
       alt={props.name}
     />
     <p className="text-black text-sm mb-2">{props.name}</p>
-    <Button
-      color="secondary"
-      className="w-2/3"
-      text={props.buttonText || "Ver más"}
-    />
+    <Link
+      to={`/materiales/${props.slug}`}
+      className="block w-full flex justify-center"
+    >
+      <Button
+        color="secondary"
+        className="w-2/3"
+        text={props.buttonText || "Ver más"}
+      />
+    </Link>
   </div>
 );

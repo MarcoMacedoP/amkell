@@ -6,6 +6,7 @@ import nprogress from "nprogress";
 import { Header } from "../components/Header";
 import { ImageBoxText } from "../components/ImageBoxText";
 import { Loading } from "../components/Loading";
+import { Link } from "react-router-dom";
 
 type Props = {};
 type MaterialsType = React.FC<Props>;
@@ -21,7 +22,7 @@ export const MaterialsPage: MaterialsType = (props) => {
     if (items) {
       const listItems = items.map((item: any, key) => {
         return key % 2 === 0 ? (
-          <div key={key}>
+          <Link key={key} to={`/materiales/${item.slug}`}>
             <br />
             <div className="flex flex-col fadeInLeft md:flex-row">
               <ImageBoxText image={item.images[0]} title={item.name} />
@@ -31,9 +32,9 @@ export const MaterialsPage: MaterialsType = (props) => {
             </div>
             <br />
             <hr />
-          </div>
+          </Link>
         ) : (
-          <div key={key}>
+          <Link to={`/materiales/${item.slug}`} key={key}>
             <br />
             <div className="flex flex-col-reverse fadeInRight md:flex-row">
               <p className="text-gray-1000 w-full md:w-1/2 md:pr-4 text-justify justify-start">
@@ -47,7 +48,7 @@ export const MaterialsPage: MaterialsType = (props) => {
             </div>
             <br />
             <hr />
-          </div>
+          </Link>
         );
       });
       return (

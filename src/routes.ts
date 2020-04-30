@@ -5,6 +5,9 @@ import { ContactPage } from "./pages/Contact";
 import { CompanyPage } from "./pages/Company";
 import { SolutionsPage } from "./pages/Solutions";
 import { GalleryPage } from "./pages/Gallery";
+import { Project } from "./pages/Project";
+import { Solution } from "./pages/Solution";
+import { Material } from "./pages/Material";
 
 const routes = [
   {
@@ -18,12 +21,22 @@ const routes = [
     path: '/materiales',
     exact: true,
     component: MaterialsPage
+  }, {
+    title: 'Material',
+    path: '/materiales/:slug',
+    exact: true,
+    component: Material
   },
   {
     title: 'Proyectos',
     path: '/proyectos',
     exact: true,
     component: ProyectsPage
+  }, {
+    title: 'Proyecto',
+    path: '/proyectos/:slug',
+    exact: true,
+    component: Project
   },
   {
     title: 'Contacto',
@@ -39,8 +52,17 @@ const routes = [
   {
     title: 'Soluciones',
     path: '/soluciones',
+    exact: true,
     component: SolutionsPage
-  }, {
+  },
+  {
+    title: 'Solucion',
+    path: '/soluciones/:slug',
+    exact: true,
+    component: Solution
+  },
+
+  {
     title: 'Galería',
     path: '/galeria',
     component: GalleryPage

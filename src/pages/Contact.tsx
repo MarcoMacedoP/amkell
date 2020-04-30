@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import nprogress from "nprogress";
 
 import { Header } from "../components/Header";
 import { Title } from "../components/Title";
@@ -8,7 +7,6 @@ import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import nProgress from "nprogress";
 import { useForm } from "../hooks/Forms";
-import { useLocation } from "react-router-dom";
 import { PHONE_NUMBER } from "../components/Layout";
 
 type Props = {};
