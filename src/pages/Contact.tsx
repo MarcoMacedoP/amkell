@@ -1,4 +1,5 @@
 import React from "react";
+import nprogress from 'nprogress';
 
 import { Header } from "../components/Header";
 import { Title } from "../components/Title";
@@ -10,6 +11,10 @@ type Props = {};
 type ContactType = React.FC<Props>;
 
 export const ContactPage: ContactType = (props) => {
+  const isLoading = true;
+  if (isLoading) {
+    nprogress.done();
+  }
   return (
     <>
       <Header contact />

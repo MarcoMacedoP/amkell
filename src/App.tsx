@@ -4,17 +4,20 @@ import routes from "./routes";
 import FancyRoute from "./components/tools/FancyRoute";
 
 import { Layout } from "./components/Layout";
+import ScrollToTop from "./components/tools/ScrollToTop";
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Switch>
-          {routes.map((route, i) => (
-            <FancyRoute key={i} {...route} />
-          ))}
-        </Switch>
-      </Layout>
+        <Layout>
+          <ScrollToTop>
+            <Switch>
+              {routes.map((route, i) => (
+                <FancyRoute key={i} {...route} />
+              ))}
+            </Switch>
+          </ScrollToTop>
+        </Layout>
     </Router>
   );
 }

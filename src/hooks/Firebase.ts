@@ -16,7 +16,7 @@ const firebaseConfig = {
 };
 const app = firebase.initializeApp(firebaseConfig);
 const db = app.firestore();
-type collection = 'Soluciones' | 'Materiales' | 'Nosotros' | 'Proyectos' | 'SolucionesPage';
+type collection = 'Soluciones' | 'Materiales' | 'Nosotros' | 'Proyectos' | 'SolucionesPage' | 'Galeria';
 
 type query = {
     key: string;
@@ -24,7 +24,6 @@ type query = {
     value: any;
 }
 export function useGetCollection(collection: collection) {
-
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [data, setData] = useState<any>(null);

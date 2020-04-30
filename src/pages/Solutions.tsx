@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import { useGetCollection, useGetItemFromCollection } from "../hooks/Firebase";
+
 import { Header } from "../components/Header";
 import { Title } from "../components/Title";
 import defaultImage from "../assets/img/transformamos-ideas-realidad.png";
 import footerImage from "../assets/img/soluiciones-footer.png";
 import { Button } from "../components/Button";
+import nprogress from "nprogress";
+import { Loading } from "../components/Loading";
 //icons
 import planificationIcon from "../assets/icons/planificacion.svg";
 import interioresIcon from "../assets/icons/Interiores.svg";
@@ -14,71 +19,137 @@ import solutionsInteriores from "../assets/icons/interiores-1.svg";
 
 type SolutionsType = React.FC<{}>;
 
+interface SolutionsPage {
+  desc: string;
+  image: string;
+  title: string;
+}
+
 export const SolutionsPage: SolutionsType = () => {
-  return (
+  const [pageContent, setPageContent] = useState<SolutionsPage>();
+  const [data] = useGetCollection("Soluciones");
+
+  const [
+    { isLoading, error },
+    { getCollectionData },
+  ] = useGetItemFromCollection({
+    collection: "SolucionesPage",
+    query: {
+      key: "type",
+      operator: "==",
+      value: "main",
+    },
+    setData: setPageContent,
+  });
+
+  useEffect(() => {
+    getCollectionData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (isLoading) {
+    nprogress.done();
+  }
+  function List(props: any) {
+    const items: Array<any> = props.items;
+    if (items) {
+      const listItems = items.map((item: any, key) => {
+        if (item.name === "Exteriores") {
+          return (
+            <SolutionCard
+              key={key}
+              icon={exterioresIcon}
+              bgColor="bg-red-600"
+              desc={item.caption}
+              title={item.name}
+              textIsWhite
+            />
+          );
+        } else if (item.name === "Planeacion") {
+          return (
+            <SolutionCard
+              key={key}
+              icon={planificationIcon}
+              bgColor="bg-yellow-500"
+              desc={item.caption}
+              title={item.name}
+            />
+          );
+        } else if (item.name === "Interiores") {
+          return (
+            <SolutionCard
+              key={key}
+              icon={interioresIcon}
+              bgColor="bg-blue-700"
+              desc={item.caption}
+              title={item.name}
+              textIsWhite
+            />
+          );
+        } else if (item.slug === "fachadas") {
+          return (
+            <SolutionCard
+              key={key}
+              icon={fachadaIcon}
+              bgColor="bg-gray-700"
+              desc={item.caption}
+              title={item.name}
+              textIsWhite
+            />
+          );
+        } else if (item.slug === "arquitectonicos") {
+          return (
+            <SolutionCard
+              key={key}
+              icon={productsIcon}
+              bgColor="bg-gray-500"
+              desc={item.caption}
+              title={item.name}
+              textIsWhite
+            />
+          );
+        } else {
+          return (
+            <SolutionCard
+              key={key}
+              icon={solutionsInteriores}
+              bgColor="bg-blue-900"
+              desc={item.caption}
+              title={item.name}
+              textIsWhite
+            />
+          );
+        }
+      });
+      return (
+        <nav className="mt-8 flex flex-col lg:flex-row lg:flex-wrap">
+          {listItems}
+        </nav>
+      );
+    } else {
+      return (
+        <nav className="mt-8 flex flex-col lg:flex-row lg:flex-wrap"></nav>
+      );
+    }
+  }
+
+  return isLoading ? (
+    <Loading />
+  ) : !error ? (
     <>
       <Header />
       <article className="flex flex-col lg:flex-row">
         <div className="lg:w-2/3">
-          <Title>Transformamos tus ideas en realidad</Title>
-          <p>
-            El principio de la compañía de AMKEL es la concepción colectiva.
-            Desde el principio, la práctica ha creído en las virtudes del
-            intercambio, el cruce de ideas, el esfuerzo común, el conocimiento
-            compartido y el entusiasmo. El estudio de AMKEL cree en una
-            arquitectura socialmente comprometida. Este enfoque se nutre de los
-            numerosos logros realizados en los últimos años, y de una atención
-            constante a la calidad de los espacios públicos y los nuevos usos.
-          </p>
+          <Title>{pageContent?.title}</Title>
+          <p>{pageContent?.desc}</p>
         </div>
         <img
           className="mt-4 w-full object-cotain object-center"
-          src={defaultImage}
+          src={pageContent?.image}
           alt="Amkell"
         />
       </article>
-      <nav className="mt-8 flex flex-col lg:flex-row lg:flex-wrap">
-        <SolutionCard
-          icon={planificationIcon}
-          bgColor="bg-yellow-500"
-          desc="Nuestros planes maestros proporcionan una visión integral de dónde está una organización hoy en día."
-          title="Planificación"
-        />
-        <SolutionCard
-          icon={interioresIcon}
-          bgColor="bg-blue-700"
-          desc="Contamos con los mejores Arquitectos para ofrecer un desarrollo integral, único y moderno."
-          title="Interiores"
-          textIsWhite
-        />
-        <SolutionCard
-          icon={exterioresIcon}
-          bgColor="bg-red-600"
-          desc="Diseños arquitectónicos únicos en su clase para el desarrollo de exteriores de la más alta calidad de nuestros productos."
-          title="Exteriores"
-          textIsWhite
-        />
-        <SolutionCard
-          icon={fachadaIcon}
-          bgColor="bg-gray-700"
-          desc="Contamos con la más amplia experiencia en el diseño de fachada ventilada, con productos de la más alta calidad."
-          title="Fachadas y ventiladores"
-          textIsWhite
-        />
-        <SolutionCard
-          icon={productsIcon}
-          bgColor="bg-gray-500"
-          desc="Contamos con los mejores Arquitectos para ofrecer un desarrollo integral, único y moderno y de la mejor calidad."
-          title="Productos Arquitectónicos"
-        />
-        <SolutionCard
-          icon={solutionsInteriores}
-          bgColor="bg-blue-900"
-          desc="Diseños arquitectónicos únicos en su clase para el desarrollo de exteriores de la más alta calidad de nuestros productos."
-          title="Soluciones en Interiores"
-          textIsWhite
-        />
-      </nav>
+      <List items={data} />
       <div className="w-full h-middle mt-4 md:mt-0">
         <img
           className="object-center object-contain w-full h-full md:object-cover"
@@ -87,6 +158,8 @@ export const SolutionsPage: SolutionsType = () => {
         />
       </div>
     </>
+  ) : (
+    <p>error</p>
   );
 };
 
