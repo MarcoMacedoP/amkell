@@ -24,7 +24,6 @@ type query = {
     value: any;
 }
 export function useGetCollection(collection: collection) {
-
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [data, setData] = useState<any>(null);

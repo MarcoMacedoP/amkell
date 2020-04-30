@@ -108,31 +108,31 @@ export const CompanyPage: CompanyType = (props) => {
       </section>
       <section className="flex flex-wrap w-full flex-col md:flex-row">
         
-          <a href="http://abetlaminati.com/en/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="http://abetlaminati.com/en/" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={AbetLaminati} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="http://amevec.mx/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="http://amevec.mx/" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Amevec} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="https://www.cembrit.com/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="https://www.cembrit.com/" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Cembrit} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="http://www.louvelia.com/?lang=es" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="http://www.louvelia.com/?lang=es" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Louvelia} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="http://www.madertech.es/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="http://www.madertech.es/" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Madertech} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="https://www.alcoa.com/global/en/home.asp" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="https://www.alcoa.com/global/en/home.asp" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Reynobond} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="https://www.stacbond.es/paginas/inicio" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="https://www.stacbond.es/paginas/inicio" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Stacbond} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="http://www.valchromat.pt/" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="http://www.valchromat.pt/" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Valchromat} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
-          <a href="http://www.viroc.pt/homepage.aspx" target="_blank" className="box-url w-full md:w-1/4 p-8">
+          <a href="http://www.viroc.pt/homepage.aspx" target="_blank" rel="noopener noreferrer" className="box-url w-full md:w-1/4 p-8">
             <img src={Viroc} alt="logo" className="ml-8 md:m-0 w-64" />
           </a>
         
