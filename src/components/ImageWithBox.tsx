@@ -25,6 +25,7 @@ export const ImageWithBox: ImageWithBoxType = ({
         className={`w-full h-5/6 object-cover object-center md:h-full ${
           isPrimary && "md:w-1/2"
         }`}
+        style={{ maxHeight: 200 }}
         alt=""
       />
       <p

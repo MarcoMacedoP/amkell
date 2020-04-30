@@ -30,7 +30,7 @@ function getWidth() {
   return { width };
 }
 export const Layout: LayoutType = (props) => {
-  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(true);
+  const [hasClickedOnMenu, setHasClickedOnMenu] = useState(false);
   const [contactData] = useState(CONTACT_DATA);
   const { width } = getWidth();
   const hasMenu = width < 800;
@@ -59,7 +59,7 @@ export const Layout: LayoutType = (props) => {
         >
           <span
             className="close-icon material-icons absolute top-0 text-gray-400 lg:hidden"
-            onClick={handleClick}
+            onClick={closeMenu}
           >
             close
           </span>
@@ -87,13 +87,25 @@ export const Layout: LayoutType = (props) => {
               <img src={phoneIcon} alt="" className="icon" />
               <p className="text-sm color-black">(33) 38012003</p>
             </div>
-            <a href="https://www.facebook.com/amkelfachadas/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/amkelfachadas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={facebookIcon} alt="" className="icon" />
             </a>
-            <a href="https://www.facebook.com/amkelfachadas/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/amkelfachadas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={buildIcon} alt="" className="icon" />
             </a>
-            <a href="https://www.instagram.com/amkel.sa/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/amkel.sa/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={instagramIcon} alt="" className="icon" />
             </a>
           </li>

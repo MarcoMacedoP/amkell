@@ -18,7 +18,7 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = app.firestore();
 type collection = 'Soluciones' | 'Materiales' | 'Nosotros' | 'Proyectos' | 'SolucionesPage' | 'Galeria';
 
-type query = {
+export type query = {
     key: string;
     operator: firebase.firestore.WhereFilterOp;
     value: any;

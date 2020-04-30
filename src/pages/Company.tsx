@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
 
 import nprogress from "nprogress";
 //Materiales
@@ -14,14 +15,41 @@ import Stacbond from "../assets/empresas/logo_Amkel_Stacbond.png";
 import Valchromat from "../assets/empresas/logo_Amkel_Valchromat.png";
 import Viroc from "../assets/empresas/logo_Amkel_Viroc.png";
 import "../styles/hover-box.css";
+import { useGetItemFromCollection } from "../hooks/Firebase";
 type Props = {};
 type CompanyType = React.FC<Props>;
 
+export interface About {
+  desc: string;
+  id: string;
+  alliances: string;
+  clients: string;
+  continents: string;
+  logos: string[];
+  materials: string;
+  team_photo: string;
+  years_photo: string;
+}
 export const CompanyPage: CompanyType = (props) => {
   const isLoading = true;
+  const [about, setAbout] = useState<About>();
+  const [status, collection] = useGetItemFromCollection({
+    collection: "Nosotros",
+    query: {
+      key: "type",
+      operator: "==",
+      value: "main",
+    },
+    setData: setAbout,
+  });
+
+  useEffect(() => {
+    collection.getCollectionData().then(() => nprogress.done());
+  }, []);
   if (isLoading) {
     nprogress.done();
   }
+  if (status.isLoading) return null;
 
   return (
     <>
@@ -29,11 +57,8 @@ export const CompanyPage: CompanyType = (props) => {
 
       <section className="flex flex-wrap w-full flex-col mb-8 md:flex-row md:flex-no-wrap lg:mb-32">
         <div className="flex-col flex m-4 md:w-3/6 md:ml-4 lg:ml-6 md:self-center  md:justify-between">
-          <div className="box-red md:w-3/6 md:self-center">
-            <h1 className="text-8xl font-bold text-center">18</h1>
-            <h2 className="text-4xl text-center tracking-widest mb-6">
-              A Ñ O S
-            </h2>
+          <div className=" md:w-3/6 md:self-center">
+            <img src={about?.years_photo} alt="" />
           </div>
         </div>
         <div className="flex-col flex md:w-3/6 md:ml-4 lg:ml-6 md:self-center  md:justify-between">
@@ -41,21 +66,7 @@ export const CompanyPage: CompanyType = (props) => {
             <div className="line mb-2" />
             <h2 className="text-primary text-2xl md:mb-6">NOSOTROS</h2>
           </div>
-          <p className="p-4 md:p-0 mt-2 text-gray-500 md:mb-6">
-            Somos una empresa mexicana comprometida a proveer a la arquitectura
-            y al diseño de los mejores materiales importados y nacionales para
-            revestimiento. En alianza comercial con fábricas europeas totalmente
-            certificadas en el ámbito de arquitectura sustentable, brindando con
-            ello un servicio global a la edificación partiendo desde el diseño,
-            solución técnica, ingenierías hasta la instalación final en el
-            proyecto. <br />
-            <br />
-            Somos además consultoría de fachadas ventiladas en México con más de
-            15 años de experiencia tanto en el ramo técnico y comercial, con
-            personal de instalación altamente especializado en estos tipos de
-            sistemas. Ofreciendo al mercado de la construcción experiencia,
-            calidad y servicio.
-          </p>
+          <p className="p-4 md:p-0 mt-2 text-gray-500 md:mb-6">{about?.desc}</p>
         </div>
       </section>
 
@@ -69,7 +80,7 @@ export const CompanyPage: CompanyType = (props) => {
         >
           <div className="md:w-1/4 md:self-center">
             <h1 className="transition text-white text-4xl lg:text-8xl font-bold text-center ">
-              9
+              {about?.alliances}
             </h1>
             <h2 className="transition text-white lg:text-4xl text-center tracking-widest md:mb-6">
               ALIANZAS <br /> COMERCIALES
@@ -77,7 +88,7 @@ export const CompanyPage: CompanyType = (props) => {
           </div>
           <div className="md:w-1/4 md:self-center">
             <h1 className="transition text-primary text-4xl lg:text-8xl font-bold text-center ">
-              211
+              {about?.clients}
             </h1>
             <h2 className="transition text-primary lg:text-4xl text-center tracking-widest md:mb-6">
               CLIENTES
@@ -85,7 +96,7 @@ export const CompanyPage: CompanyType = (props) => {
           </div>
           <div className="md:w-1/4 md:self-center">
             <h1 className="transition text-white text-4xl lg:text-8xl font-bold text-center ">
-              17
+              {about?.materials}
             </h1>
             <h2 className="transition text-white lg:text-4xl text-center tracking-widest md:mb-6">
               MATERIALES
@@ -93,7 +104,7 @@ export const CompanyPage: CompanyType = (props) => {
           </div>
           <div className="md:w-1/4 md:self-center">
             <h1 className="transition text-primary text-4xl lg:text-8xl font-bold text-center ">
-              3
+              {about?.continents}
             </h1>
             <h2 className="transition text-primary lg:text-4xl text-center tracking-widest md:mb-6">
               CONTINENTES
@@ -113,78 +124,11 @@ export const CompanyPage: CompanyType = (props) => {
         </div>
       </section>
       <section className="flex flex-wrap w-full flex-col md:flex-row">
-        <a
-          href="http://abetlaminati.com/en/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={AbetLaminati} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="http://amevec.mx/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Amevec} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="https://www.cembrit.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Cembrit} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="http://www.louvelia.com/?lang=es"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Louvelia} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="http://www.madertech.es/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Madertech} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="https://www.alcoa.com/global/en/home.asp"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Reynobond} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="https://www.stacbond.es/paginas/inicio"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Stacbond} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="http://www.valchromat.pt/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Valchromat} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
-        <a
-          href="http://www.viroc.pt/homepage.aspx"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="box-url w-full md:w-1/4 p-8"
-        >
-          <img src={Viroc} alt="logo" className="ml-8 md:m-0 w-64" />
-        </a>
+        {about?.logos.map((img, index) => (
+          <div className="box-url w-full md:w-1/4 p-8" key={index}>
+            <img src={img} alt="amkell" className="ml-8 md:m-0 w-64" />
+          </div>
+        ))}
       </section>
     </>
   );

@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import banner from "../assets/img/banner.jpg";
-type Props = {};
+type Props = {
+  projects: [
+    {
+      slug: string;
+      name: string;
+    }
+  ];
+};
 type HomeSliderType = React.FC<Props>;
 
-export const HomeSlider: HomeSliderType = (props) => {
+export const HomeSlider: HomeSliderType = ({ projects }) => {
   return (
     <nav className="w-screen -ml-2 mb-8 md:ml-0 md:w-full lg:h-screen fadeIn">
       <div className=" bg-black h-4/6 p-2 relative lg:p-8">
@@ -18,47 +25,22 @@ export const HomeSlider: HomeSliderType = (props) => {
             Calidad e innovacion arquitectonica en la edificación
           </h1>
           <button className="hidden mb-4 mt-8 text-primary uppercase bg-white opacity-75 border-primary border-2 py-2 rounded-lg w-1/3 lg:block">
-            Nuestros proyectos
+            <Link to="/proyectos">Nuestros proyectos</Link>
           </button>
-          <div className="w-full flex text-primary items-center justify-center mt-2 lg:w-1/3">
-            <span className="material-icons text-4xl">keyboard_backspace</span>
-            <span className="material-icons text-4xl rotate-180 transform">
-              keyboard_backspace
-            </span>
-          </div>
         </div>
       </div>
       <div className="w-full flex flex-wrap md:justify-end">
-        <SectionLink
-          to={"/proyectos"}
-          isActive={true}
-          index={1}
-          title={"Innovacion arquitectonica"}
-        />
-        <SectionLink
-          to={"/materiales"}
-          isActive={false}
-          index={2}
-          title={"Materiales innovadores"}
-        />
-        <SectionLink
-          to={"/sistemas"}
-          isActive={false}
-          index={3}
-          title={"Sistemas innovadores"}
-        />
-        <SectionLink
-          to={"/calidad"}
-          isActive={false}
-          index={4}
-          title={"Calidad arquitectonica"}
-        />
-        <SectionLink
-          to={"/proyectos"}
-          isActive={false}
-          index={5}
-          title={"Interior innovador"}
-        />
+        {projects.map(
+          (p, i) =>
+            i < 5 && (
+              <SectionLink
+                to={`proyectos/${p.slug}`}
+                isActive={i === 0}
+                title={p.name}
+                index={i + 1}
+              />
+            )
+        )}
       </div>
     </nav>
   );

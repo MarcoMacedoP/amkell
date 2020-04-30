@@ -24,10 +24,11 @@ export const ImageBoxText: ImageWithBoxType = ({
     >
       <img
         src={image}
-        className={`w-full h-5/6 object-cover object-center md:h-full ${
+        className={`w-full h-5/6 object-contain object-center md:h-full ${
           isPrimary && "md:w-full"
         } ${classNameImg}`}
         alt=""
+        style={{ maxHeight: 200 }}
       />
       <p
         className={`p-3 whitespace-no-wrap text-center absolute w-1/2 right-0 bottom-0 text-sm md:p-4 md:text-lg ${

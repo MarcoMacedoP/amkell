@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useGetCollection } from "../hooks/Firebase";
-import nprogress from 'nprogress'
+import nprogress from "nprogress";
 
 import { Header } from "../components/Header";
 import { ImageBoxText } from "../components/ImageBoxText";
@@ -9,17 +9,15 @@ import { Loading } from "../components/Loading";
 
 type Props = {};
 type MaterialsType = React.FC<Props>;
-type collection = 'Soluciones' | 'Materiales';
-const collection: collection = 'Materiales';
+type collection = "Soluciones" | "Materiales";
+const collection: collection = "Materiales";
 
 export const MaterialsPage: MaterialsType = (props) => {
-  
   const [data, isLoading, error] = useGetCollection(collection);
   console.log(data);
 
   function List(props: any) {
-    const items:Array<any> = props.items;
-    // console.log('items : ', items);
+    const items: Array<any> = props.items;
     if (items) {
       const listItems = items.map((item: any, key) => {
         return key % 2 === 0 ? (
@@ -59,11 +57,10 @@ export const MaterialsPage: MaterialsType = (props) => {
       );
     } else {
       return (
-        <div className="flex flex-row flex-wrap p-4 md:p-0 md:flex-col md:mb-16">
-        </div>
+        <div className="flex flex-row flex-wrap p-4 md:p-0 md:flex-col md:mb-16"></div>
       );
     }
-  }  
+  }
   if (isLoading) {
     nprogress.done();
   }
