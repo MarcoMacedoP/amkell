@@ -11,7 +11,7 @@ import { PHONE_NUMBER } from "../components/Layout";
 
 type Props = {};
 type ContactType = React.FC<Props>;
-const EMAIL = "info@amkell.com";
+const EMAIL = "info@amkell.com.mx";
 
 export const ContactPage: ContactType = (props) => {
   const [form, handleChange] = useForm({
