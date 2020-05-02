@@ -30,17 +30,36 @@ export const HomeSlider: HomeSliderType = ({ projects }) => {
         </div>
       </div>
       <div className="w-full flex flex-wrap md:justify-end">
-        {projects.map(
-          (p, i) =>
-            i < 5 && (
-              <SectionLink
-                to={`proyectos/${p.slug}`}
-                isActive={i === 0}
-                title={p.name}
-                index={i + 1}
-              />
-            )
-        )}
+        <SectionLink
+          to={"/proyectos"}
+          isActive={true}
+          index={1}
+          title={"Innovacion arquitectonica"}
+        />
+        <SectionLink
+          to={"/materiales"}
+          isActive={false}
+          index={2}
+          title={"Materiales innovadores"}
+        />
+        <SectionLink
+          to={"/soluciones"}
+          isActive={false}
+          index={3}
+          title={"Sistemas innovadores"}
+        />
+        <SectionLink
+          to={"/compañia"}
+          isActive={false}
+          index={4}
+          title={"Calidad arquitectonica"}
+        />
+        <SectionLink
+          to={"/proyectos"}
+          isActive={false}
+          index={5}
+          title={"Interior innovador"}
+        />
       </div>
     </nav>
   );
