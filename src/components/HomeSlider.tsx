@@ -42,13 +42,13 @@ export const HomeSlider: HomeSliderType = (props) => {
           title={"Materiales innovadores"}
         />
         <SectionLink
-          to={"/sistemas"}
+          to={"/soluciones"}
           isActive={false}
           index={3}
           title={"Sistemas innovadores"}
         />
         <SectionLink
-          to={"/calidad"}
+          to={"/compañia"}
           isActive={false}
           index={4}
           title={"Calidad arquitectonica"}
