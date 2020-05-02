@@ -43,7 +43,7 @@ export const ContactPage: ContactType = (props) => {
       <section className="flex flex-col">
         <Title>Contacto</Title>
         <div className="relative h-screen flex justify-end w-full">
-          <div className="w-1/2 relative z-10">
+          <div className="w-full lg:w-1/2 relative z-10">
             <Input
               label="Nombre"
               value={form.nombre}

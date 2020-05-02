@@ -16,7 +16,7 @@ export const Input: React.FC<InputProps> = ({
   onChange,
 }) => {
   return (
-    <div className="flex flex-col my-4 bg-white z-20">
+    <div className="flex flex-col my-4 z-20">
       <label htmlFor="">{label}</label>
       {isTextArea ? (
         <textarea

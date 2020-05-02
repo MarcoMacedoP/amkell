@@ -59,6 +59,13 @@ export const CompanyPage: CompanyType = (props) => {
             <h2 className="text-primary text-2xl md:mb-6">NOSOTROS</h2>
           </div>
           <p className="p-4 md:p-0 mt-2 text-gray-500 md:mb-6">{about?.desc}</p>
+          <iframe
+            title="Amkell"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/dLHzJMAp4ic"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
         </div>
       </section>
 
