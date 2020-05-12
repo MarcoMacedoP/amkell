@@ -12115,7 +12115,8 @@ p {
   display: flex;
   justify-content: center;
   z-index: 0;
-  transition: opacity 800ms ease-in, background-color 800ms ease, color;
+  transition: opacity 800ms ease-in, background-color 800ms ease,
+    color;
 }
 
 .material-icons:hover,
@@ -12204,6 +12205,13 @@ p {
   height: 0.5rem;
 }
 
+.social-icon {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.25rem;
+  margin: 0 4px;
+}
+
 .filter-brightness {
   filter: brightness(0.5);
 }
@@ -12216,6 +12224,14 @@ p {
   border-style: solid;
   border-width: 8px;
   border-color: #F52A26;
+}
+
+.carousel-buttons-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 50%;
+  width: 100%;
 }
 
 @keyframes fadeIn {
@@ -12279,7 +12295,7 @@ p {
   transition: 0.5s;
   border-radius: 0.375rem;
   padding: 0.25rem;
-  color: #F52A26
+  color: #F52A26;
 }
 
 .sk-cube-grid {
@@ -12293,7 +12309,7 @@ p {
   height: 33%;
   float: left;
   animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-  background-color: #F52A26
+  background-color: #F52A26;
 }
 
 .sk-cube-grid .sk-cube1 {
@@ -12333,10 +12349,20 @@ p {
 }
 
 @keyframes sk-cubeGridScaleDelay {
-  0%, 70%, 100% {
+  0%,
+  70%,
+  100% {
     transform: scale3D(1, 1, 1);
-  } 35% {
+  }
+
+  35% {
     transform: scale3D(0, 0, 1);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .carousel-buttons-container {
+    bottom: 30%;
   }
 }
 

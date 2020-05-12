@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import logo from "../assets/img/logo.png";
 import logoWhite from "../assets/img/logo-white.png";
 import footerBackground from "../assets/img/footer.png";
 import facebookIcon from "../assets/icons/facebook-icon.svg";
 import instagramIcon from "../assets/icons/instagram-icon.svg";
-import buildIcon from "../assets/icons/build-icon.svg";
+import youtubeIcon from "../assets/icons/youtube-icon.png";
 import phoneIcon from "../assets/icons/phone-icon.svg";
 import whatsappIcon from "../assets/icons/whatsapp-icon.svg";
 import { Link } from "react-router-dom";
@@ -24,26 +24,14 @@ const CONTACT_DATA = [
   "CP: 44600",
   "Guadalajara Jalisco,Mex",
 ];
-function getWidth() {
-  const width =
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth;
-  return { width };
-}
+
 export const Layout: LayoutType = (props) => {
   const [hasClickedOnMenu, setHasClickedOnMenu] = useState(false);
   const [contactData] = useState(CONTACT_DATA);
-  const { width } = getWidth();
-  const hasMenu = width < 800;
+
   function handleClick() {
     setHasClickedOnMenu(!hasClickedOnMenu);
   }
-  useEffect(() => {
-    if (!hasMenu) {
-      setHasClickedOnMenu(true);
-    }
-  }, []);
 
   const closeMenu = () => setHasClickedOnMenu(false);
 
@@ -53,7 +41,10 @@ export const Layout: LayoutType = (props) => {
         <Link to="/">
           <Logo />
         </Link>
-        <button className="material-icons lg:hidden" onClick={handleClick}>
+        <button
+          className="material-icons lg:hidden"
+          onClick={handleClick}
+        >
           menu
         </button>
         <ul
@@ -102,31 +93,47 @@ export const Layout: LayoutType = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={facebookIcon} alt="" className="icon" />
+              <img
+                src={facebookIcon}
+                alt=""
+                className="social-icon"
+              />
             </a>
             <a
-              href="http://linkedin.com/company/amkel-soluciones-arquitectonicas/about/"
+              href="https://youtu.be/dLHzJMAp4ic"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={buildIcon} alt="" className="icon" />
+              <img
+                src={youtubeIcon}
+                alt=""
+                className="social-icon object-contain"
+              />
             </a>
             <a
               href="https://www.instagram.com/amkel.sa/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={instagramIcon} alt="" className="icon" />
+              <img
+                src={instagramIcon}
+                alt=""
+                className="social-icon"
+              />
             </a>
           </li>
         </ul>
         <ul
           className={`Layout__menu lg:hidden
-            ${hasClickedOnMenu ? "w-2/3 h-auto py-8 px-6" : "w-0 h-0 p-0"}`}
+            ${
+              hasClickedOnMenu
+                ? "w-2/3 h-auto py-8 px-6"
+                : "w-0 h-0 p-0"
+            }`}
         >
           <span
             className="close-icon material-icons absolute top-0 text-gray-400 lg:hidden"
-            onClick={handleClick}
+            onClick={closeMenu}
           >
             close
           </span>
@@ -155,7 +162,11 @@ export const Layout: LayoutType = (props) => {
               <p className="text-sm color-black">(33) 38012003</p>
             </div>
             <img src={facebookIcon} alt="" className="icon" />
-            <img src={buildIcon} alt="" className="icon" />
+            <img
+              src={youtubeIcon}
+              alt=""
+              className="icon object-contain"
+            />
             <img src={instagramIcon} alt="" className="icon" />
           </li>
         </ul>
@@ -187,7 +198,9 @@ export const Layout: LayoutType = (props) => {
             <FooterItem title="Contacto" list={contactData} />
           </div>
           <div className="mt-2 md:flex">
-            <p className="text-primary mb-2 font-bold opacity-50">Siguenos</p>
+            <p className="text-primary mb-2 font-bold opacity-50">
+              Siguenos
+            </p>
             <div className="flex">
               <a
                 href="https://www.facebook.com/amkelfachadas/"
@@ -197,11 +210,11 @@ export const Layout: LayoutType = (props) => {
                 <img src={facebookIcon} alt="" className="icon" />
               </a>
               <a
-                href="http://linkedin.com/company/amkel-soluciones-arquitectonicas/about/"
+                href="https://youtu.be/dLHzJMAp4ic"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={buildIcon} alt="" className="icon" />
+                <img src={youtubeIcon} alt="" className="icon" />
               </a>
               <a
                 href="https://www.instagram.com/amkel.sa/"
@@ -214,7 +227,9 @@ export const Layout: LayoutType = (props) => {
           </div>
         </div>
         <div className="bg-red-600 h-12 w-full text-white text-center text-sm flex items-center justify-between">
-          <span className="w-5/6">AMKEL Soluciones Arquitectonicas 2020</span>
+          <span className="w-5/6">
+            AMKEL Soluciones Arquitectonicas 2020
+          </span>
           <div className="bg-blue-500 w-1/6 h-full flex items-center justify-center">
             <span className="material-icons">email</span>
           </div>

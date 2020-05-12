@@ -8,7 +8,7 @@ import buildingImage from "../assets/img/structure.png";
 import planificacionIcon from "../assets/icons/planificacion.svg";
 import interiorsIcon from "../assets/icons/Interiores.svg";
 import exterioresIcon from "../assets/icons/exteriores.svg";
-import buildIcon from "../assets/icons/build-icon.svg";
+import youtubeIcon from "../assets/icons/youtube-icon.png";
 
 import {
   useGetCollection,
@@ -23,7 +23,7 @@ const solutionsIcon = [
   planificacionIcon,
   interiorsIcon,
   exterioresIcon,
-  buildIcon,
+  youtubeIcon,
 ];
 
 type Props = {};
@@ -53,7 +53,8 @@ export const HomePage: HomeType = () => {
     getInitials();
   }, []);
 
-  if (!soluciones || !nosotros || !materiales || !proyectos) return null;
+  if (!soluciones || !nosotros || !materiales || !proyectos)
+    return null;
   else {
     nProgress.done(true);
 
@@ -72,9 +73,13 @@ export const HomePage: HomeType = () => {
           <div className="flex-col flex md:w-3/6 md:ml-4 lg:ml-6 md:self-center  md:justify-between">
             <div>
               <div className="line mb-2" />
-              <h2 className="text-primary text-2xl md:mb-6">Nosotros</h2>
+              <h2 className="text-primary text-2xl md:mb-6">
+                Nosotros
+              </h2>
             </div>
-            <p className="mt-2 text-black md:mb-6">{nosotros?.desc}</p>
+            <p className="mt-2 text-black md:mb-6">
+              {nosotros?.desc}
+            </p>
             <Link to="/compañia">
               <Button text="Ver más" className="mt-4 w-2/3" />
             </Link>
@@ -92,7 +97,10 @@ export const HomePage: HomeType = () => {
             <>
               <div className="flex flex-row flex-wrap md:flex-col md:mb-16">
                 {soluciones.map(
-                  (sol: { miniature: string; name: string }, index: number) =>
+                  (
+                    sol: { miniature: string; name: string },
+                    index: number
+                  ) =>
                     index < MAX_INDEX && (
                       <div key={index} className="w-full">
                         <ImageWithBox
@@ -129,7 +137,11 @@ export const HomePage: HomeType = () => {
             </div>
             <div className="flex flex-wrap w-full items-center justify-center md:mt-8">
               {materiales?.map((m: any) => (
-                <MaterialCard name={m.name} image={m.images[0]} slug={m.slug} />
+                <MaterialCard
+                  name={m.name}
+                  image={m.images[0]}
+                  slug={m.slug}
+                />
               ))}
             </div>
           </section>
