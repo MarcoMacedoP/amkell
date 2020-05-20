@@ -41,6 +41,7 @@ export const HomePage: HomeType = () => {
   const [nosotros, setNosotros] = useState<About>();
   const [materiales] = useGetCollection("Materiales");
   const [proyectos] = useGetCollection("Proyectos");
+  const [carousel] = useGetCollection("Carosuel");
   const [, nosotrosCollection] = useGetItemFromCollection({
     collection: "Nosotros",
     query: baseQueryPage,
@@ -53,14 +54,20 @@ export const HomePage: HomeType = () => {
     getInitials();
   }, []);
 
-  if (!soluciones || !nosotros || !materiales || !proyectos)
+  if (
+    !soluciones ||
+    !nosotros ||
+    !materiales ||
+    !proyectos ||
+    !carousel
+  )
     return null;
   else {
     nProgress.done(true);
 
     return (
       <>
-        <HomeSlider projects={proyectos} />
+        <HomeSlider data={carousel} />
         <section
           className="flex flex-wrap w-full flex-col-reverse mb-8
                            md:flex-row md:flex-no-wrap lg:mb-32"
