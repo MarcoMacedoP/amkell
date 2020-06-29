@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import {
@@ -26,8 +26,13 @@ export const HomeSlider: HomeSliderType = ({ data }) => {
     console.log({ newIndex });
     setIndex(newIndex);
   }
-  const nextSlide = () => setIndex(index + 1);
-  const lastSlide = () => setIndex(index - 1);
+  const isLastSlide = useMemo(() => index === data.length - 1, [
+    data,
+    index,
+  ]);
+  const nextSlide = () => setIndex(isLastSlide ? 0 : index + 1);
+  const lastSlide = () =>
+    setIndex(index === 0 ? data.length - 1 : index - 1);
   if (!data || data.length === 0) {
     return null;
   }

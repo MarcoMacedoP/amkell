@@ -12,12 +12,11 @@ import { Link } from "react-router-dom";
 import { ActiveLink } from "./ActiveLink";
 type Props = {};
 type LayoutType = React.FC<Props>;
-
-export const PHONE_NUMBER = "3338012003";
-
+export const PHONE_NUMBER = "3335503712";
+export const WHATSAPP_NUMBER = "3338012003";
 const CONTACT_DATA = [
   "Whatsapp: (33)38012003",
-  "Conmutador: (33)10310952",
+  "Conmutador: 3335503712",
   "info@amkel.com.mx",
   "C. Antonio de León 434-1",
   "Col. Ladrón de Guevara",
@@ -77,7 +76,7 @@ export const Layout: LayoutType = (props) => {
           <li className="items-center hidden lg:flex">
             <div className="flex items-center">
               <a
-                href={`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}`}
+                href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
