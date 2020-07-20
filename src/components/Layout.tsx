@@ -18,7 +18,7 @@ const CONTACT_DATA = [
   "Whatsapp: (33)38012003",
   "Conmutador: 3335503712",
   "info@amkel.com.mx",
-  "C. Antonio de León 434-1",
+  "Fray Luis de Palacio 379",
   "Col. Ladrón de Guevara",
   "CP: 44600",
   "Guadalajara Jalisco,Mex",
