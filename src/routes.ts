@@ -9,65 +9,73 @@ import { Project } from "./pages/Project";
 import { Solution } from "./pages/Solution";
 import { Material } from "./pages/Material";
 
-const routes = [
+export interface Route {
+  title: string;
+  path: string;
+  exact?: boolean;
+  component: React.FC<any>;
+}
+
+const routes: Route[] = [
   {
-    title: 'Home',
-    path: '/',
+    title: "Home",
+    path: "/",
     exact: true,
-    component: HomePage
+    component: HomePage,
   },
   {
-    title: 'Materiales',
-    path: '/materiales',
+    title: "Materiales",
+    path: "/materiales",
     exact: true,
-    component: MaterialsPage
-  }, {
-    title: 'Material',
-    path: '/materiales/:slug',
-    exact: true,
-    component: Material
+    component: MaterialsPage,
   },
   {
-    title: 'Proyectos',
-    path: '/proyectos',
+    title: "Material",
+    path: "/materiales/:slug",
     exact: true,
-    component: ProyectsPage
-  }, {
-    title: 'Proyecto',
-    path: '/proyectos/:slug',
-    exact: true,
-    component: Project
+    component: Material,
   },
   {
-    title: 'Contacto',
-    path: '/contacto',
+    title: "Proyectos",
+    path: "/proyectos",
     exact: true,
-    component: ContactPage
+    component: ProyectsPage,
   },
   {
-    title: 'Compañia',
-    path: '/compañia',
-    component: CompanyPage
+    title: "Proyecto",
+    path: "/proyectos/:slug",
+    exact: true,
+    component: Project,
   },
   {
-    title: 'Soluciones',
-    path: '/soluciones',
+    title: "Contacto",
+    path: "/contacto",
     exact: true,
-    component: SolutionsPage
+    component: ContactPage,
   },
   {
-    title: 'Solucion',
-    path: '/soluciones/:slug',
+    title: "Compañia",
+    path: "/compañia",
+    component: CompanyPage,
+  },
+  {
+    title: "Soluciones",
+    path: "/soluciones",
     exact: true,
-    component: Solution
+    component: SolutionsPage,
+  },
+  {
+    title: "Solucion",
+    path: "/soluciones/:slug",
+    exact: true,
+    component: Solution,
   },
 
   {
-    title: 'Galería',
-    path: '/galeria',
-    component: GalleryPage
+    title: "Galería",
+    path: "/galeria",
+    component: GalleryPage,
+  },
+];
 
-  }
-]
-
-export default routes
+export default routes;

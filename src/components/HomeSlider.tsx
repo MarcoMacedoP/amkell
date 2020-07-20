@@ -53,7 +53,7 @@ export const HomeSlider: HomeSliderType = ({ data }) => {
               title={item.title}
               backgroundImage={item.image}
               urlText={item.buttonLabel}
-              url={`/${item.url}/`}
+              url={item.url}
             />
           ))}
         </Slider>
